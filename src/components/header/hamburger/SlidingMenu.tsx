@@ -1,0 +1,43 @@
+import {Link} from "react-router-dom"
+import menuNames from "../menuNames"
+import SearchBar from "../header-items/SearchBar"
+
+type SlidingProps = {
+    translate:string,
+    setVisible:React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+const SlidingMenu: React.FC<SlidingProps> = ({translate,setVisible}) => { 
+    
+    function closeMenu(){
+        setVisible(prev => !prev)
+    }
+
+    const displayMenu:JSX.Element[] = menuNames.map((item,i) => (
+    <li key={i} onClick={closeMenu}>
+        <Link to={item.url}>{item.name}</Link>
+    </li>
+
+    ))
+    return(
+        <div className={`w-full h-full fixed top-0 left-0 flex flex-col items-center bg-white transition:all duration-200 ease-in-out ${translate} md:hidden justify-end z-10`}>
+            <SearchBar />
+            <ul className="flex flex-col ml-7 gap-14 text-xl font-sans-serif mt-16">
+                {displayMenu}
+                <li 
+                    className="animate-bounce hover:cursor-pointer flex justify-end w-screen"
+                    onClick={closeMenu}
+                    >
+                    <svg 
+                    className="rotate-180 w-14 mr-12" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 512 512"><path fill="#6E83B7" 
+                    d="M502 256 302 106v80H146v140h156v80zM78 186h40v140H78zM10 186h40v140H10z"/>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+export default SlidingMenu
