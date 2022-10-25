@@ -1,10 +1,10 @@
 import Button from "../components/Button"
 
 type Props = {
-    name:string
-    price:number
-    description:string
-    img?:string
+    name:string | undefined
+    price:number | undefined
+    description:string | undefined
+    img?:string | undefined
 }
 
 const ProductCard:React.FC<Props> = ({name,price,description,img}) => { 

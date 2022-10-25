@@ -10,7 +10,7 @@ const menuNames:Array<{name:string,url:string, id?:number,route?:string}> = [
     {   
         id:1,
         name:"Kurtas",
-        url:"/collection/kurtas",
+        url:"/collection/kurta",
     },
     {   
         id:2,

@@ -4,10 +4,11 @@ import menuNames from "./header/menuNames";
 import { Context } from "../context/ThemeContext";
 import { useContext } from "react"
 
-type ContextObject = any
+
 
  const DesktopNavBar: React.FC = () => { 
-    const {viewportSizes} = useContext<ContextObject>(Context)
+    // error when defining type for useContext
+    const {viewportSizes} = useContext<any>(Context)
     const {tablet,desktop} = viewportSizes
     const displayMenu:JSX.Element[] = menuNames.map((item,i) => <li className="text-base xl:text-lg xl:tracking-wide" key={i}><Link to={item.url}>{item.name}</Link></li>)
 

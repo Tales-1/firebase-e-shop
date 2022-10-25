@@ -1,21 +1,32 @@
 import React, {useState,useEffect,createContext} from "react"
-import dataArray from "../data"
 
+import useFetcher from "../useFetcher"
 
 // TYPESCRIPT CONTEXT OBJECT ERROR WHEN PASSING IT TO HERO.TSX
 interface ViewportSizes { 
     viewportSizes?:{
-                mobile?:boolean | undefined
-                tablet?:boolean | undefined
-                desktop?:boolean | undefined
+                mobile?:boolean
+                tablet?:boolean
+                desktop?:boolean
             }
+}
+
+interface ProductObject { 
+    id?:string,
+    name?:string,
+    type?:string,
+    price?:number,
+    description?:string,
 }
 
 interface ContextObject extends ViewportSizes{
     innerWidth?:number
     overlayStyles?:string
-    data?:Object[]
+    productData?:Array<ProductObject>
 }
+
+
+
 
 type Props = { 
     children:React.ReactNode
@@ -23,19 +34,26 @@ type Props = {
 
 
 const Context = createContext<ContextObject>({})
-const {Provider} = Context
+const { Provider } = Context
 
 const ContextProvider: React.FC<Props> = ({children}):JSX.Element => {
-    const data = dataArray
+    const { data } = useFetcher()
     const [innerWidth,setInnerWidth] = useState(window.innerWidth)
+    const [productData,setProductData] = useState<ProductObject[]>([{}])
+
     const overlayStyles = "before:absolute before:inset-0 before:bg-black before:opacity-40"
     useEffect(()=>{
         window.addEventListener("resize",()=>setInnerWidth(window.innerWidth))
-
+        
         return () => {
             window.removeEventListener("resize", ()=>setInnerWidth(window.innerWidth))
         }
     },[])
+
+    useEffect(()=>{
+        setProductData(data)
+       
+    },[data])
 
     const viewportSizes = {
         mobile:innerWidth < 768,
@@ -44,7 +62,7 @@ const ContextProvider: React.FC<Props> = ({children}):JSX.Element => {
     }
     
     return(
-        <Provider value = {{viewportSizes,innerWidth,overlayStyles,data}}>
+        <Provider value = {{viewportSizes,innerWidth,overlayStyles,productData}}>
             {children}
         </Provider>
     )

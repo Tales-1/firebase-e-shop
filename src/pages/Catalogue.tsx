@@ -1,4 +1,3 @@
-import { useParams,Link } from "react-router-dom"
 import kurtaOne from "../images/Kurta-1.jpeg"
 import kurtaTwo from "../images/Kurta-2-0.jpeg"
 import kurtaThree from "../images/Kurta-3.jpeg"
@@ -6,11 +5,6 @@ import CatalogueCard from "../components/CatalogueCard"
 
 
 const Catalogue:React.FC = () =>{
-   const params = useParams()
-
-
-  
-
     return(
         <div className="flex flex-col items-center h-full gap-12">
             <h1 className="text-4xl lg:text-6xl font-serif mt-12 w-full text-center">COLLECTION</h1>
