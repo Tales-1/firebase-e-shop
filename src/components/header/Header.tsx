@@ -13,9 +13,9 @@ const Header: React.FC = () => {
     
     const {viewportSizes} = useContext<ContextObject>(Context)
     const {mobile,tablet,desktop} = viewportSizes
-
+    
     return(
-        <div className="bg-blue-header flex items-center p-4 w-full md:p-5 xl:p-6">
+        <header className="bg-blue-header flex items-center p-4 w-full md:p-5 xl:p-6">
             {mobile && <MobileNavBar />}
 
             <Link to="/" className="w-36 mx-auto md:w-40 md:mx-0 xl:w-56">
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
 
             <Profile />
             <ShoppingBag />
-        </div>
+        </header>
 
     )
 }

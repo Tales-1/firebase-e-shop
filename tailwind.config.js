@@ -10,7 +10,6 @@ module.exports = {
         "serif" : ["Cormorant SC","serif"],
         "sans-serif":["Lato","sans-serif"],
       },
-     
       minHeight: {
         "card":"15rem"
       },
@@ -25,9 +24,10 @@ module.exports = {
         "red":"#E10606",
         },
         screens: {
-          "sm": '480px',
+          "sm-0":"480px",
+          "sm": '570px',
           "md": '768px',
-          "lg": '976px',
+          "lg": '996px',
           "lg-2":'1200px',
           "xl": '1440px',
       },

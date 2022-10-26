@@ -5,6 +5,7 @@ type ToggleFunction = {
 }
 
 const HamburgerMenu: React.FC<ToggleFunction> = ({toggleVisible}) => { 
+   
     return(
         <img 
         className="w- h-6 hover:cursor-pointer md:hidden" 

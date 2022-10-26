@@ -2,7 +2,7 @@ import kurtaOne from "../images/Kurta-3.jpeg"
 import kurtaTwo from "../images/Kurta-5-1.jpeg"
 import kurtaThree from "../images/Kurta-11-1.jpeg"
 import kurtaFour from "../images/Kurta-7-1.jpeg"
-import {useContext} from "react"
+import { useContext } from "react"
 import { Context } from "../context/ThemeContext"
 import Hero from "./Hero"
 
@@ -10,6 +10,7 @@ import Hero from "./Hero"
 // Property 'mobile' does not exist on type '{ mobile?: boolean | undefined; tablet?: boolean | undefined; desktop?: boolean | undefined; } | undefined'.ts(2339)
 
 const ImageGrid:React.FC = () => {
+    
     const {viewportSizes} = useContext(Context)
     const {mobile}:any= viewportSizes
     const gridStyles = mobile ? "grid-cols-2 grid-rows-2" : "grid-cols-3"

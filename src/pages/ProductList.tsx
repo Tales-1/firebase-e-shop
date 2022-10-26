@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom"
+import { useParams, Outlet } from "react-router-dom"
 import { Context } from "../context/ThemeContext"
-import { ReactElement, ReactNode, useContext, useEffect, useState } from "react"
+import { ReactNode, useContext, useEffect, useState } from "react"
 import ProductCard from "../components/ProductCard"
 import kurtaOne from "../images/Kurta-9.jpeg"
 import SpinnerL from "../utils/SpinnerL"
+
 
 interface ProductObject { 
     id?:string,
@@ -13,18 +14,16 @@ interface ProductObject {
     description?:string,
 }
 const ProductList:React.FC = () =>{
-    const { productData } = useContext(Context)
-    const [loading,setLoading] = useState(true)
+    const { productData, loading } = useContext(Context)
     const [storeProds,setStoreProds] = useState<ProductObject[] | null>()
 
     const params = useParams()
-
+    
     const displayProds:ReactNode = productData == null ? [] : storeProds?.map((product,i)=>{
-        const {name,price,description} = product
+        const {name,price} = product
         return (<ProductCard 
                     key={i}
                     name={name}
-                    description={description}
                     price={price}
                     img={kurtaOne}
                 />)
@@ -33,25 +32,26 @@ const ProductList:React.FC = () =>{
     useEffect(()=>{
         if(productData !== undefined) {
             // const filteredArray:object[] = []
-            //filter not working here for some reason
             const filteredArray = productData.filter((product)=>{
                 if(product.type !== params.name) return false
                 return product
             })
+            console.log("rendered")
             setStoreProds(filteredArray)
     }
-
-    setTimeout(()=>setLoading(false),500)
-    },[productData])
+    
+    },[params,productData])
   
       
     
     return(
-        <div className="container bg-sauvignon-cr h-screen font-serif min-w-full">
-            <h2 className="text-center text-4xl py-3 my-3 w-full">{params.name?.toUpperCase()}</h2>
-            <div className="bg-white pt-34 flex flex-col gap-7 items-center justify-center py-5 overflow-scroll">
-             {loading ? <SpinnerL /> : displayProds }    
+        <div className="container h-screen min-w-full">
+            <nav className="w-full flex p-5 bg-sauvignon-cr"></nav>
+            <h2 className="text-4xl py-6 w-full text-center lg:text-5xl font-serif">{params.name?.toUpperCase()}</h2>
+            <div className="bg-white mt-5 flex flex-col gap-10 justify-center items-center py-5 overflow-scroll md:overflow-none md:w-9/12 md:mx-auto lg:flex-row lg:flex-wrap lg:items-start lg-2:w-8/12 lg-2:justify-start lg:ml-auto lg:mr-0">
+                {loading ? <SpinnerL /> : displayProds }    
             </div>
+            
         </div>
         
     )

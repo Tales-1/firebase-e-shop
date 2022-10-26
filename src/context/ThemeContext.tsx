@@ -1,6 +1,6 @@
 import React, {useState,useEffect,createContext} from "react"
 
-import useFetcher from "../useFetcher"
+import useFetcher from "../utils/useFetcher"
 
 // TYPESCRIPT CONTEXT OBJECT ERROR WHEN PASSING IT TO HERO.TSX
 interface ViewportSizes { 
@@ -23,10 +23,8 @@ interface ContextObject extends ViewportSizes{
     innerWidth?:number
     overlayStyles?:string
     productData?:Array<ProductObject>
+    loading?:boolean
 }
-
-
-
 
 type Props = { 
     children:React.ReactNode
@@ -37,11 +35,11 @@ const Context = createContext<ContextObject>({})
 const { Provider } = Context
 
 const ContextProvider: React.FC<Props> = ({children}):JSX.Element => {
-    const { data } = useFetcher()
+    const { data, loading } = useFetcher()
     const [innerWidth,setInnerWidth] = useState(window.innerWidth)
     const [productData,setProductData] = useState<ProductObject[]>([{}])
-
     const overlayStyles = "before:absolute before:inset-0 before:bg-black before:opacity-40"
+    
     useEffect(()=>{
         window.addEventListener("resize",()=>setInnerWidth(window.innerWidth))
         
@@ -52,7 +50,6 @@ const ContextProvider: React.FC<Props> = ({children}):JSX.Element => {
 
     useEffect(()=>{
         setProductData(data)
-       
     },[data])
 
     const viewportSizes = {
@@ -62,7 +59,7 @@ const ContextProvider: React.FC<Props> = ({children}):JSX.Element => {
     }
     
     return(
-        <Provider value = {{viewportSizes,innerWidth,overlayStyles,productData}}>
+        <Provider value = {{viewportSizes,innerWidth,overlayStyles,productData, loading}}>
             {children}
         </Provider>
     )

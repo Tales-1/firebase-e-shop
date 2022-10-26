@@ -1,7 +1,7 @@
 import { getFirestore, collection, getDocs } from "firebase/firestore"
 import { initializeApp } from "firebase/app";
 import { useEffect, useState } from "react";
-import { prettyDOM } from "@testing-library/react";
+
 
 
 const firebaseConfig = {
@@ -17,24 +17,30 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore()
 
 const useFetcher = () => { 
-  const [loading, setLoading] = useState(false)
   const [error,setError] = useState(null)
   const [data,setData] = useState<object[]>([])
+  const [loading,setLoading] = useState(true)
   const colRef = collection(db,"products")
-  
-  useEffect(()=>{
-    getDocs(colRef)
-    .then((snapshot) => {
-        const products:Object[] = []
-        snapshot.docs.forEach((doc) => {
-          products.push({ ...doc.data()})
-        })
-        setData(products)
-    })
-    .catch(err => setError(err))
-  },[])
 
-  return {data,error,loading}
+  useEffect(()=>{
+    const fetchData = async() => { 
+      try{
+        const snapshot = await getDocs(colRef)
+        const products:Object[] = []
+        snapshot.docs.forEach((doc)=>{
+          products.push({...doc.data(),id:doc.id})
+        })
+        console.log("fetched")
+        setLoading(false)
+        setData(products)
+      } catch (error){
+        console.error(error)
+      }
+    }
+    fetchData()
+  },[])
+  
+  return {data, loading}
 } 
 
 export default useFetcher
