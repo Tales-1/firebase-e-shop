@@ -1,6 +1,7 @@
 import { getFirestore, collection, getDocs } from "firebase/firestore"
 import { initializeApp } from "firebase/app";
 import { useEffect, useState } from "react";
+import { prototype } from "events";
 
 
 
@@ -30,7 +31,6 @@ const useFetcher = () => {
         snapshot.docs.forEach((doc)=>{
           products.push({...doc.data(),id:doc.id})
         })
-        console.log("fetched")
         setLoading(false)
         setData(products)
       } catch (error){
