@@ -7,7 +7,7 @@ const Hero:React.FC = () => {
             <h1 className="text-5xl leading-tight md:text-8xl xl:text-8.5xl text-white font-serif">Traditional and Modern Styles To Suit All
                 <span className="block text-2xl xl:text-4.5xl mt-5">Browse through our collection</span>
             </h1>
-            <Link to="/catalogue"><Button styles="text-white text-lg md:p-5 md:text-2xl bg-red p-3 xl:text-2xl xl:mt-10 font-extrabold mx-auto">SHOP NOW</Button></Link>
+            <Link to="/collection"><Button styles="text-white text-lg md:p-5 md:text-2xl bg-red p-3 xl:text-2xl xl:mt-10 font-extrabold mx-auto">SHOP NOW</Button></Link>
         </div>
     )
 }

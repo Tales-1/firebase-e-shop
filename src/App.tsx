@@ -12,7 +12,6 @@ import DesktopNavBar from "./components/DesktopNavBar";
 import { BrowserRouter as Router} from "react-router-dom"
 
 const App: React.FC = () => {
-  console.log("rendering")
   return (
     <div className="relative h-screen flex flex-col">
       <Router>
@@ -20,9 +19,9 @@ const App: React.FC = () => {
       <DesktopNavBar />
         <Routes>
             <Route path ="/" element={<Home />} />
-            <Route path="catalogue" element={<Catalogue />} />
+            <Route path="/collection" element={<Catalogue />} />
             <Route path="/collection/:name">
-              <Route index  element={<ProductList />} />
+              <Route index element={<ProductList />} />
               <Route path=":type" element={<ProductPage />} />
             </Route>
             <Route path="/contact-us" element={<ContactPage />} />
