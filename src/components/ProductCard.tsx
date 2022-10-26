@@ -7,16 +7,16 @@ type Props = {
     name:string | undefined
     price:number | undefined
     img?:string | undefined
+    id?:string | undefined
 }
-
-const ProductCard:React.FC<Props> = ({name,price,img}) => { 
+const ProductCard:React.FC<Props> = ({name,price,img, id}) => { 
     const { pathname } = useLocation()
-    console.log(pathname)
+    
     return(
         <article className="min-h-card w-2/3 max-w-xs rounded-lg flex flex-col items-center gap-2">
             <div className="grid relative">
 
-                <Link to={`${pathname}/${name}`} className="w-full h-full row-start-1 col-start-1">
+                <Link to={`${pathname}/${id}`} className="w-full h-full row-start-1 col-start-1">
                     <img className="object-cover" src={img} alt="item" />
                 </Link>
 
@@ -28,7 +28,7 @@ const ProductCard:React.FC<Props> = ({name,price,img}) => {
                     <p className="row-start-1 col-start-1 mt-8 ml-4 rotate-[41deg] text-white font-bold">£{price}</p>
                 </div>
             </div>
-            <h3 className="text-base md:text-2xl font-bold font-serif">{name}</h3>
+            <h3 className="text-xl md:text-2xl font-bold font-serif">{name}</h3>
         </article>
     )
 }
