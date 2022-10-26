@@ -5,12 +5,12 @@ const menuNames:Array<{name:string,url:string, id?:number,route?:string}> = [
     },
     {
         name:"Catalogue",
-        url:"/catalogue",
+        url:"/collection",
     },
     {   
         id:1,
         name:"Kurtas",
-        url:"/collection/kurta",
+        url:"/collection/kurtas",
     },
     {   
         id:2,
