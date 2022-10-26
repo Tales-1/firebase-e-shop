@@ -29,7 +29,7 @@ const BreadCrumbs:React.FC<Props> = ({pathObj}) => {
     const displayLinks = routes.map((route,index) => ( 
         <Link key={index} to={route.path}> - {route.name} --</Link>
     ))
-    console.log(routes)
+
     return(
         <nav className="w-full flex p-5 bg-sauvignon-cr flex justify-center">
                 {displayLinks}

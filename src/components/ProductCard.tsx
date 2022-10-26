@@ -9,7 +9,7 @@ type Props = {
     img?:string | undefined
     id?:string | undefined
 }
-const ProductCard:React.FC<Props> = ({name,price,img, id}) => { 
+const ProductCard:React.FC<Props> = ({name,price,img,id}) => { 
     const { pathname } = useLocation()
     
     return(

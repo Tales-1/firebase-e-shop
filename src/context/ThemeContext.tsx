@@ -39,7 +39,6 @@ const ContextProvider: React.FC<Props> = ({children}):JSX.Element => {
     const [innerWidth,setInnerWidth] = useState(window.innerWidth)
     const [productData,setProductData] = useState<ProductObject[]>([{}])
     const overlayStyles = "before:absolute before:inset-0 before:bg-black before:opacity-40"
-    
     useEffect(()=>{
         window.addEventListener("resize",()=>setInnerWidth(window.innerWidth))
         
@@ -59,7 +58,7 @@ const ContextProvider: React.FC<Props> = ({children}):JSX.Element => {
     }
     
     return(
-        <Provider value = {{viewportSizes,innerWidth,overlayStyles,productData, loading}}>
+        <Provider value = {{viewportSizes,innerWidth,overlayStyles,productData,loading}}>
             {children}
         </Provider>
     )
