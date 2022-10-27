@@ -7,11 +7,16 @@ import { useContext } from "react"
 
 
  const DesktopNavBar: React.FC = () => { 
+
     // error when defining type for useContext
     
     const {viewportSizes} = useContext<any>(Context)
     const {tablet,desktop} = viewportSizes
-    const displayMenu:JSX.Element[] = menuNames.map((item,i) => <li className="text-base xl:text-lg xl:tracking-wide" key={i}><Link to={item.url}>{item.name}</Link></li>)
+    
+    const displayMenu:JSX.Element[] = menuNames.map((item,i) => (
+    <li className="text-base xl:text-lg xl:tracking-wide" key={i}>
+        <Link to={item.url}>{item.name}</Link>
+    </li>))
 
      return(
        (tablet || desktop) && 

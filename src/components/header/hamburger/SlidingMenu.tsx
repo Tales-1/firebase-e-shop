@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import menuNames from "../menuNames"
 import SearchBar from "../header-items/SearchBar"
 

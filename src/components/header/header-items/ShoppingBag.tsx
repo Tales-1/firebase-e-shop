@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import emptyShoppingBag from "../icons/bag-empty.png"
 import fullShoppingBag from "../icons/bag-fill.png"

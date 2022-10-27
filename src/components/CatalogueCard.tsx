@@ -8,7 +8,7 @@ type CardProps = {
     name:string
     src:string
 }
-
+// ERROR ON CONTEXT OBJECT
 type ContextObject = any
 
 

@@ -9,6 +9,7 @@ type Props = {
     img?:string | undefined
     id?:string | undefined
 }
+
 const ProductCard:React.FC<Props> = ({name,price,img,id}) => { 
     const { pathname } = useLocation()
     
@@ -29,6 +30,7 @@ const ProductCard:React.FC<Props> = ({name,price,img,id}) => {
                 </div>
             </div>
             <h3 className="text-xl md:text-2xl font-bold font-serif">{name}</h3>
+            
         </article>
     )
 }

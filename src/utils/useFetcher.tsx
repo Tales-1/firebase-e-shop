@@ -31,15 +31,15 @@ const useFetcher = () => {
         snapshot.docs.forEach((doc)=>{
           products.push({...doc.data(),id:doc.id})
         })
-        setLoading(false)
         setData(products)
       } catch (error){
         console.error(error)
+      } finally{
+        setLoading(false)
       }
     }
     fetchData()
   },[])
-  
   return {data, loading}
 } 
 
