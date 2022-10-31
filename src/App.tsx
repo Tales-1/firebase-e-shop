@@ -1,4 +1,4 @@
-import {Route,Routes,Navigate,useParams} from "react-router-dom"
+import {BrowserRouter as Router, Route,Routes,Navigate} from "react-router-dom"
 import React from "react"
 import Home from "./pages/Home";
 import Catalogue from "./pages/Catalogue";
@@ -9,7 +9,6 @@ import ProfilePage from "./pages/ProfilePage";
 import Checkout from "./pages/Checkout";
 import Header from "./components/header/Header";
 import DesktopNavBar from "./components/DesktopNavBar";
-import { BrowserRouter as Router} from "react-router-dom"
 
 const App: React.FC = () => {
   return (
