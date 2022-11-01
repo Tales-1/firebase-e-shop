@@ -25,6 +25,7 @@ module.exports = {
         "sauvignon-cr":"#F2E9E4",
         "light-p":"#9a8c98",
         "red":"#E10606",
+        "dark":"#D9D9D9"
         },
         screens: {
           "sm-0":"480px",

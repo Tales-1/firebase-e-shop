@@ -25,7 +25,7 @@ const Header: React.FC = () => {
     // const {mobile,tablet,desktop} = viewportSizes
     
     return(
-        <header className="bg-blue-header flex items-center p-4 w-full md:p-5 xl:p-6">
+        <header className="bg-blue-header flex items-center p-4 w-full md:p-5 xl:p-6 sticky top-0 z-10">
             {mobile && <MobileNavBar />}
 
             <Link to="/" className="w-36 mx-auto md:w-40 md:mx-0 xl:w-56">
