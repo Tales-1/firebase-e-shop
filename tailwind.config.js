@@ -13,6 +13,9 @@ module.exports = {
       minHeight: {
         "card":"15rem"
       },
+      maxHeight: {
+        "card":"50rem"
+      },
       colors: {
         "blue":{
           "header":"#22223b",

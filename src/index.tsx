@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ContextProvider } from './context/ThemeContext';
+import { Provider } from 'react-redux';
+import { store } from './redux/store/store';
 import './index.css';
 import App from './App';
 
@@ -8,9 +9,9 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(
   <React.StrictMode>
-    <ContextProvider>
-        <App />
-    </ContextProvider>
+    <Provider store={store}>
+          <App />
+    </Provider>
   </React.StrictMode>
 );
 

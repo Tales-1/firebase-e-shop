@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom"
-import { Context } from "../context/ThemeContext"
 import { useContext } from "react"
 import Button from "../components/Button"
+import { useAppSelector } from "../redux/store/hooks"
+import { selectOverlay } from "../redux/features/screenSlice"
 
-type CardProps = { 
-    url:string
-    name:string
-    src:string
-}
 // ERROR ON CONTEXT OBJECT
 type ContextObject = any
 
+type CardProps = {
+    url:string
+    src:string
+    name:string
+}
 
 const CatalogueCard:React.FC<CardProps> = ({url,src,name}) => { 
-    const {overlayStyles} = useContext<ContextObject>(Context)
+    const overlayStyles = useAppSelector(selectOverlay)
     return( 
                 <div className={`relative ${overlayStyles} flex flex-col w-full items-center shadow-2xl transition-all duration-300 hover:scale-105 rounded-3xl overflow-hidden`}>
                     <img src={src} alt="clothes" className="w-full aspect-square object-cover"/>
