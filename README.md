@@ -15,7 +15,7 @@ Order history recorded and stored in firebase storage upon "purchase"
 
 ## React fundamentals applied:
 
-State
+State __
 Props
 Context
 Hooks
