@@ -37,4 +37,4 @@ Order history recorded and stored in firebase storage upon "purchase"
 
 ## EDIT
 ** Though it isn't a live e-commerce shop, it is quite possible in the near future that this app ships to production. For that matter, during the building 
-phase of this App I decided to implement features required in live deployed apps such as user authentication and databases.
+phase of this App I decided to learn and implement features required in live deployed apps such as user authentication and databases.
