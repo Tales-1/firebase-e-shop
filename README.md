@@ -1,7 +1,27 @@
-# Getting Started with Create React App
+# E-Shop App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The aim of this CRA is to make a multipage fake virtual store to put my learning to use. Having just learnt React and the fundamentals I see this as a great
+opportunity test my comprehension of the React ecosystem.
 
-## Available Scripts
+I will also be learning & applying tailwindcss and Typescript.js for the first time.
 
-lol
+## React fundamentals applied:
+
+State
+Props
+Context
+Hooks
+React Router
+Render Props
+React Children
+
+
+### Skills/programs learnt and applied during this project
+
+Typescript 
+Tailwindcss
+Redux
+Firebase:
+  - Database
+  - Authentication
+Cloudinary 
