@@ -1,14 +1,10 @@
 import { useParams, useLocation } from "react-router-dom"
-import { AsyncThunkAction } from "@reduxjs/toolkit"
-import type { Item } from "../redux/features/dataSlice"
 import { ReactNode, useContext, useEffect, useState } from "react"
 import ProductCard from "../components/ProductCard"
-import kurtaOne from "../images/Kurta-9.jpeg"
 import SpinnerL from "../utils/SpinnerL"
 import BreadCrumbs from "../utils/BreadCrumbs"
-import { selectData, selectError, selectStatus, selectFiltered, fetchData, filter} from "../redux/features/dataSlice"
+import { selectError, selectStatus, selectFiltered, fetchData, filter} from "../redux/features/dataSlice"
 import { useAppDispatch, useAppSelector } from "../redux/store/hooks"
-import FilterMenu from "../components/FilterMenu"
 
 interface ProductObject { 
     id?:string,
@@ -36,7 +32,7 @@ const ProductList:React.FC = () =>{
     console.log("rendered")
     const pathname = useLocation().pathname
     
-    const displayItems:ReactNode = filteredArray.map((product,i)=>{
+    const displayItems:ReactNode = filteredArray.map((product:ProductObject,i)=>{
             const { name,price,id,url } = product
             return (<ProductCard 
                         key={i}
