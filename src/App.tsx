@@ -11,6 +11,7 @@ import Header from "./components/header/Header";
 import DesktopNavBar from "./components/DesktopNavBar";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
+import Reset from "./pages/Reset"
 
 const App: React.FC = () => {
   return (
@@ -26,9 +27,11 @@ const App: React.FC = () => {
             </Route>
             <Route path="/contact-us" element={<ContactPage />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/user-profile">
-              <Route index element={<Login />} />
-              <Route path="/user-profile/register" element={<Register />} />
+            <Route path="/profile">
+              <Route index element={<Dashboard />} />
+              <Route path="login" element={<Login />} />
+              <Route path ="register" element={<Register />} />
+              <Route path ="reset" element={<Reset />} />
             </Route>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<Navigate to="/" replace />} />
