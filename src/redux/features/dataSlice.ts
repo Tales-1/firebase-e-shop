@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, AsyncThunkAction, PayloadActionCreator } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 
 import { getFirestore, collection, getDocs } from "firebase/firestore"
@@ -17,7 +17,9 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore()
 const colRef = collection(db,"products")
 
-export const fetchData = createAsyncThunk("data/fetchItems", async() => {
+export const fetchData = createAsyncThunk(
+    "data/fetchItems", 
+    async() => {
     const snapshot = await getDocs(colRef)
     const products:Object[] = []
         snapshot.docs.forEach((doc)=>{
@@ -26,9 +28,7 @@ export const fetchData = createAsyncThunk("data/fetchItems", async() => {
     return products
 })
 
-
-
-interface Item {
+export interface Item {
     name?:string
     description?:string
     price?:number
