@@ -15,24 +15,24 @@ Order history recorded and stored in firebase storage upon "purchase"
 
 ## React fundamentals applied:
 
-State --
-Props
-Context
-Hooks
-React Router v6
-Render Props
-React Children
+- State
+- Props
+- Context
+- Hooks
+- React Router v6
+- Render Props
+- React Children
 
 
-### Skills/programs learnt and applied during this project
+### Skills/programs learnt and applied during this project:
 
-Typescript 
-Tailwindcss
-Redux
-Firebase:
+- Typescript 
+- Tailwindcss
+- Redux
+- Firebase:
   - Database
   - Authentication
-Cloudinary 
+- Cloudinary 
 
 
 ## EDIT
