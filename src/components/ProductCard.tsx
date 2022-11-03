@@ -10,7 +10,7 @@ import {useState} from "react"
 type Props = {
     name:string | undefined
     price:number | undefined
-    urls?:string | undefined
+    urls?:string[] | undefined
     id?:string | undefined
 }
 
@@ -19,13 +19,12 @@ const ProductCard:React.FC<Props> = ({name,price,urls,id}) => {
     const { pathname } = useLocation()
     const dispatch = useAppDispatch()
     const [visible, setVisible] = useState(false)
-    
     return(
-        <article className="min-h-card w-2/3 max-w-xs rounded-lg flex flex-col items-center gap-2">
+        <article className="min-h-card w-full max-w-[17rem] rounded-lg flex flex-col items-center gap-2">
             <div className="grid relative">
 
                 <Link to={`${pathname}/${id}`} className="row-start-1 col-start-1" onClick={()=>dispatch(findCurrent(id))}>
-                    <img className="object-cover" src={urls} alt="item" />
+                    <img className="object-cover" src={urls![0]} alt="item" />
                 </Link>
 
                 <Button 

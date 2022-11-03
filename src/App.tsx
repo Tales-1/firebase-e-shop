@@ -5,17 +5,18 @@ import Catalogue from "./pages/Catalogue";
 import ProductList from "./pages/ProductList";
 import ContactPage from "./pages/ContactPage";
 import ProductPage from "./pages/ProductPage";
-import ProfilePage from "./pages/ProfilePage";
+import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import Header from "./components/header/Header";
 import DesktopNavBar from "./components/DesktopNavBar";
+import Dashboard from "./pages/Dashboard";
+import Register from "./pages/Register";
 
 const App: React.FC = () => {
   return (
     <div className="relative h-screen flex flex-col">
       <Router>
-      <Header />
-      <DesktopNavBar />
+        <Header />
         <Routes>
             <Route path ="/" element={<Home />} />
             <Route path="/collection" element={<Catalogue />} />
@@ -25,7 +26,11 @@ const App: React.FC = () => {
             </Route>
             <Route path="/contact-us" element={<ContactPage />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/user-profile" element={<ProfilePage />} />
+            <Route path="/user-profile">
+              <Route index element={<Login />} />
+              <Route path="/user-profile/register" element={<Register />} />
+            </Route>
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>

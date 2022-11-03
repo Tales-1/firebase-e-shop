@@ -7,6 +7,7 @@ import Profile from "./header-items/Profile"
 import SearchBar from "./header-items/SearchBar"
 import { useAppDispatch, useAppSelector } from "../../redux/store/hooks"
 import { selectViewport, setWidth } from "../../redux/features/screenSlice"
+import DesktopNavBar from "../DesktopNavBar"
 
 
 const Header: React.FC = () => {
@@ -25,18 +26,20 @@ const Header: React.FC = () => {
     // const {mobile,tablet,desktop} = viewportSizes
     
     return(
-        <header className="bg-blue-header flex items-center p-4 w-full md:p-5 xl:p-6 sticky top-0 z-10">
-            {mobile && <MobileNavBar />}
+        <> 
+            <header className="bg-blue-header flex items-center p-4 w-full md:p-5 xl:p-6 z-10">
+                {mobile && <MobileNavBar />}
+                <Link to="/" className="w-36 mx-auto md:w-40 md:mx-0 xl:w-56">
+                    <img  src={logo} alt="shop logo" />
+                </Link>  
 
-            <Link to="/" className="w-36 mx-auto md:w-40 md:mx-0 xl:w-56">
-                <img  src={logo} alt="shop logo" />
-            </Link>  
+                {(tablet || desktop) && <SearchBar />}
 
-            {(tablet || desktop) && <SearchBar />}
-
-            <Profile />
-            <ShoppingBag />
-        </header>
+                <Profile />
+                <ShoppingBag />
+            </header>
+            {tablet || desktop ? <DesktopNavBar /> : null}
+        </>
 
     )
 }

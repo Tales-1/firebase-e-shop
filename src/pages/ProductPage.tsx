@@ -28,7 +28,8 @@ const ProductPage:React.FC = () => {
     return(
         <div className="w-full">
             <BreadCrumbs pathObj={{path:pathname, name:params}} />
-            <article className="flex flex-col w-11/12 mx-auto mt-3 gap-3 px-5 py-5 lg:flex-row lg:justify-center">
+            
+            <article className="flex flex-col w-11/12 mx-auto mt-3 gap-3 px-5 py-5 lg:flex-row lg:justify-center border-2">
                 <div className="flex w-full lg-2:w-1/2">
                     <img src={url![0]} alt="current item" className="object-contain w-full aspect-square"/>
                 </div>

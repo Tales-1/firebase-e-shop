@@ -6,6 +6,7 @@ import SpinnerL from "../utils/SpinnerL"
 import BreadCrumbs from "../utils/BreadCrumbs"
 import { selectData, selectError, selectStatus, selectFiltered, fetchData, filter} from "../redux/features/dataSlice"
 import {useAppDispatch, useAppSelector } from "../redux/store/hooks"
+import FilterMenu from "../components/FilterMenu"
 
 interface ProductObject { 
     id?:string,
@@ -39,7 +40,7 @@ const ProductList:React.FC = () =>{
                         key={i}
                         name={name}
                         price={price} 
-                        urls={url![0]}
+                        urls={url}
                         id={id}
                     />)
         
@@ -49,10 +50,12 @@ const ProductList:React.FC = () =>{
         <div className="container h-screen min-w-full">
             <BreadCrumbs pathObj={{path:pathname, name:params}} />
             <h2 className="text-4xl py-6 w-full text-center lg:text-5xl font-serif">{params?.toUpperCase()}</h2>
-            <div className="bg-white mt-5 flex flex-col gap-10 justify-center items-center py-5 overflow-scroll md:overflow-none md:w-9/12 md:mx-auto lg:flex-row lg:flex-wrap lg:items-start lg-2:w-8/12 lg-2:justify-start lg:ml-auto lg:mr-0">
-                {status === "loading" ? <SpinnerL /> :  displayItems }    
-            </div>
-            
+            <main className="flex flex-col lg:flex-row">
+                
+                <div className="bg-white mt-5 flex flex-col gap-10 justify-center items-center py-5 md:w-10/12 md:mx-auto md:flex-row md:flex-wrap lg:items-start lg-2:w-8/12  lg:ml-auto lg:mr-20">
+                    {status === "loading" ? <SpinnerL /> :  displayItems }    
+                </div>
+            </main>
         </div>
         
     )

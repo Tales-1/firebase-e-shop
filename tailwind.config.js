@@ -11,10 +11,12 @@ module.exports = {
         "sans-serif":["Lato","sans-serif"],
       },
       minHeight: {
-        "card":"15rem"
+        "card":"15rem",
+        
       },
       maxHeight: {
-        "card":"50rem"
+        "card":"50rem",
+        "login":"30rem",
       },
       colors: {
         "blue":{
