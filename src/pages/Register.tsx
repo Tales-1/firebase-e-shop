@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { Link, useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 import Button from "../components/Button";
 import {
     auth,
@@ -14,6 +15,8 @@ const Register:React.FC = () => {
     const [name,setName] = useState("")
     const [user, loading,error] = useAuthState(auth)
     const navigate = useNavigate()
+    const {pathname} = useLocation()
+    const path = pathname.split("/")[1]
     const inputStyles = "border-2 border-black p-2"
     const register = () => {
         registerWithEmailAndPassword(name,email,password)
@@ -54,7 +57,8 @@ const Register:React.FC = () => {
                     placeholder="Password"
                     required
                     />
-                    <Button styles="bg-blue-card text-white font-bold p-2 rounded-2xl hover:opacity-70" func={register}>
+                </form>
+                <Button styles="bg-blue-card text-white font-bold p-2 rounded-2xl hover:opacity-70" func={register}>
                         Register
                     </Button>
                     <Button
@@ -63,9 +67,8 @@ const Register:React.FC = () => {
                     >
                     Register with Google
                     </Button>
-                </form>
             <div className="text-center mt-3">
-            <Link to="/user-profile" className="hover:text-blue-500 underline">Already have an account? Login now.</Link>
+            <Link to={`/${path}`} className="hover:text-blue-500 underline">Already have an account? Login now.</Link>
             </div>
             </div>
       </div>
