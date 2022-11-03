@@ -1,11 +1,13 @@
 import { useParams, useLocation } from "react-router-dom"
+import { AsyncThunkAction } from "@reduxjs/toolkit"
+import type { Item } from "../redux/features/dataSlice"
 import { ReactNode, useContext, useEffect, useState } from "react"
 import ProductCard from "../components/ProductCard"
 import kurtaOne from "../images/Kurta-9.jpeg"
 import SpinnerL from "../utils/SpinnerL"
 import BreadCrumbs from "../utils/BreadCrumbs"
 import { selectData, selectError, selectStatus, selectFiltered, fetchData, filter} from "../redux/features/dataSlice"
-import {useAppDispatch, useAppSelector } from "../redux/store/hooks"
+import { useAppDispatch, useAppSelector } from "../redux/store/hooks"
 import FilterMenu from "../components/FilterMenu"
 
 interface ProductObject { 
@@ -13,7 +15,7 @@ interface ProductObject {
     name?:string,
     type?:string,
     price?:number,
-    description?:string,
+    description?:string
     url?:string[]
 }
 const ProductList:React.FC = () =>{
@@ -21,8 +23,8 @@ const ProductList:React.FC = () =>{
     const status = useAppSelector(selectStatus)
     const error = useAppSelector(selectError)
     const params:string = useParams().name!
-
     const dispatch = useAppDispatch()
+    
     useEffect(()=>{
         if(status === "idle"){
             dispatch(fetchData())
@@ -47,7 +49,7 @@ const ProductList:React.FC = () =>{
     })
 
     return(
-        <div className="container h-screen min-w-full">
+        <div className="container h-screen min-w-full mt-10">
             <BreadCrumbs pathObj={{path:pathname, name:params}} />
             <h2 className="text-4xl py-6 w-full text-center lg:text-5xl font-serif">{params?.toUpperCase()}</h2>
             <main className="flex flex-col lg:flex-row">
