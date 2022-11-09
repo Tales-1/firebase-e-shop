@@ -8,16 +8,22 @@ import ProductPage from "./pages/ProductPage";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import Header from "./components/header/Header";
-import DesktopNavBar from "./components/DesktopNavBar";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import Reset from "./pages/Reset"
+import Notification from "./components/Notification";
+import SlidingCartMenu from "./components/SlidingCartMenu";
+import Overlay from "./utils/Overlay";
+
 
 const App: React.FC = () => {
   return (
-    <div className="relative h-screen flex flex-col">
+    <div className="relative flex flex-col h-screen">
+      <Notification />
+      <Overlay />
       <Router>
         <Header />
+        <SlidingCartMenu />
         <Routes>
             <Route path ="/" element={<Home />} />
             <Route path="/collection" element={<Catalogue />} />
