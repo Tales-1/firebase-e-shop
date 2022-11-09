@@ -16,8 +16,8 @@ import { selectViewport } from "../redux/features/screenSlice";
 
      return (
         (tablet || desktop) ? 
-        (   <div className="w-screen">
-                <ul className="flex justify-center text-xs gap-16 py-4 lg-2:gap-40 ">
+        (   <div className="w-screen border-b-2 border-sauvignon-cr">
+                <ul className="flex justify-center text-xs gap-16 py-3 lg-2:gap-40">
                     {displayMenu}
                 </ul>
             </div>  )
