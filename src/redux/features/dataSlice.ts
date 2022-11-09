@@ -35,6 +35,7 @@ export interface Item {
     type?:string
     url?:string[]
     id?:string
+    qty?:number
 }
 
 
@@ -97,5 +98,6 @@ export const selectData = (state:RootState) => state.fetcher.products
 export const selectFiltered = (state:RootState) => state.fetcher.filtered
 export const selectCurrentItem = (state:RootState) => state.fetcher.currentItem
 export const selectError = (state:RootState) => state.fetcher.error
+export const selectProducts = (state:RootState) => state.fetcher.products
 
 export default dataSlice.reducer
