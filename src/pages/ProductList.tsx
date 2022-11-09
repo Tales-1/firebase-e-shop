@@ -29,7 +29,6 @@ const ProductList:React.FC = () =>{
         }
     },[status,dispatch,params])
     
-    console.log("rendered")
     const pathname = useLocation().pathname
     
     const displayItems:ReactNode = filteredArray.map((product:ProductObject,i)=>{
@@ -45,9 +44,9 @@ const ProductList:React.FC = () =>{
     })
 
     return(
-        <div className="container h-screen min-w-full mt-10">
+        <div className="container h-screen min-w-full">
             <BreadCrumbs pathObj={{path:pathname, name:params}} />
-            <h2 className="text-4xl py-6 w-full text-center lg:text-5xl font-serif">{params?.toUpperCase()}</h2>
+            <h2 className="text-4xl py-6 w-full text-center md:text-5xl font-serif">{params?.toUpperCase()}</h2>
             <main className="flex flex-col lg:flex-row">
                 
                 <div className="bg-white mt-5 flex flex-col gap-10 justify-center items-center py-5 md:w-10/12 md:mx-auto md:flex-row md:flex-wrap lg:items-start lg-2:w-8/12  lg:ml-auto lg:mr-20">
