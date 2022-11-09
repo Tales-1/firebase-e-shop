@@ -17,7 +17,7 @@ const Register:React.FC = () => {
     const navigate = useNavigate()
     const {pathname} = useLocation()
     const path = pathname.split("/")[1]
-    const inputStyles = "border-2 border-black p-2"
+    const inputStyles = "border-2 border-black p-2 rounded-md"
     const register = () => {
         registerWithEmailAndPassword(name,email,password)
     }
@@ -29,7 +29,7 @@ const Register:React.FC = () => {
 
     return (
         <div className="flex justify-center h-screen bg-dark md:items-center">
-            <div className="bg-white p-3 max-w-md w-full h-full max-h-login grid items-center shadow-md">
+            <div className="bg-white p-3 max-w-md w-full h-full max-h-login grid items-center shadow-md rounded-md">
             <div className="flex flex-col gap-4 w-11/12 mx-auto">
             <h1 className="text-start font-sans-serif text-xl">Register</h1>
                 <form className="flex flex-col gap-5">
@@ -68,7 +68,7 @@ const Register:React.FC = () => {
                     Register with Google
                     </Button>
             <div className="text-center mt-3">
-            <Link to={`/${path}`} className="hover:text-blue-500 underline">Already have an account? Login now.</Link>
+            <Link to={`/${path}`} className="hover:text-blue-500 underline">Already have an account? Sign in now.</Link>
             </div>
             </div>
       </div>
