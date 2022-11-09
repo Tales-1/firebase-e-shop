@@ -23,6 +23,7 @@ module.exports = {
           "header":"#22223b",
           "card":"#4A4E69"
           },
+        "green":"#50C878",
         "purple":"#9A8C98",
         "sauvignon-cr":"#F2E9E4",
         "light-p":"#9a8c98",
@@ -38,9 +39,18 @@ module.exports = {
           "xl": '1440px',
       },
       fontSize:{
-        "4.5xl":"2.3rem",
+        "4.5xl":"2.7rem",
         "5.5xl":"3rem",
         "8.5xl":"6.9rem",
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      },
+      animation: { 
+        wiggle:"wiggle 1s ease-in-out infinite"
       }
   },
 },
