@@ -2,6 +2,7 @@ import kurtaOne from "../images/Kurta-3.jpeg"
 import kurtaTwo from "../images/Kurta-5-1.jpeg"
 import kurtaThree from "../images/Kurta-11-1.jpeg"
 import kurtaFour from "../images/Kurta-7-1.jpeg"
+import heroImg from "../images/her-new.jpeg"
 import Hero from "./Hero"
 import { useAppSelector, useAppDispatch } from "../redux/store/hooks"
 import { selectViewport } from "../redux/features/screenSlice"
@@ -12,16 +13,15 @@ import { selectViewport } from "../redux/features/screenSlice"
 const ImageGrid:React.FC = () => {
     const viewportSizes = useAppSelector(selectViewport)
     const {mobile} = viewportSizes
-    const gridStyles = mobile ? "grid-cols-2 grid-rows-2" : "grid-cols-3"
-    const imgArray = [kurtaOne,kurtaTwo,kurtaThree]
-    const displayImages = imgArray.map((img,i)=> (
-            <img key={i} src={img} alt="kurta" className="object-cover h-full w-full"/>
-    ))
+    
+    // const imgArray = [kurtaOne,kurtaTwo]
+    // const displayImages = imgArray.map((img,i)=> (
+    //         <img key={i} src={img} alt="kurta" className="object-cover h-full w-full"/>
+    // ))
     return (
-            <div className="relative grid before:absolute before:block before:inset-0 before:bg-black before:opacity-40 h-full max-w-full">
-                <div className={`grid ${gridStyles} row-start-1 col-start-1 bg-black overflow-hidden`}>
-                    {displayImages}
-                    {(mobile && <img src={kurtaFour} alt="kurta" className="object-cover h-full w-full" />)}
+            <div className="relative grid h-full max-w-full">
+                <div className="grid row-start-1 col-start-1 bg-black overflow-hidden before:absolute before:block before:inset-0 before:bg-black before:opacity-50 -z-10">
+                    <img className="object-cover h-full w-full" src={heroImg} alt="woman wearing a dress" />
                 </div>      
                 <Hero />
             </div>
