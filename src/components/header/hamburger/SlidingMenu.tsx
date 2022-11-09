@@ -20,7 +20,7 @@ const SlidingMenu: React.FC<SlidingProps> = ({translate,setVisible}) => {
 
     ))
     return(
-        <nav className={`w-full h-full fixed top-0 left-0 flex flex-col items-center bg-white transition:all duration-200 ease-in-out ${translate} md:hidden justify-end z-10`}>
+        <nav className={`w-full h-full fixed top-0 left-0 flex flex-col items-center bg-white transition:all duration-200 ease-in-out ${translate} md:hidden justify-end z-100`}>
             <SearchBar />
             <ul className="flex flex-col ml-7 gap-14 text-xl font-sans-serif mt-16">
                 {displayMenu}
