@@ -3,7 +3,6 @@ import priceTag from "./header/icons/red-label-two.png"
 import { Link, useLocation } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../redux/store/hooks"
 import { findCurrent } from "../redux/features/dataSlice"
-import { addToCart } from "../redux/features/cartSlice"
 import ProductModal from "./ProductModal"
 import {useState} from "react"
 
@@ -20,15 +19,15 @@ const ProductCard:React.FC<Props> = ({name,price,urls,id}) => {
     const dispatch = useAppDispatch()
     const [visible, setVisible] = useState(false)
     return(
-        <article className="min-h-card w-full max-w-[17rem] rounded-lg flex flex-col items-center gap-2">
-            <div className="grid relative">
+        <article className="min-h-card w-full max-w-[17rem] rounded-lg flex flex-col items-center gap-2 hover:scale-105 transition-all">
+            <div className="grid relative shadow-lg">
 
                 <Link to={`${pathname}/${id}`} className="row-start-1 col-start-1" onClick={()=>dispatch(findCurrent(id))}>
-                    <img className="object-cover" src={urls![0]} alt="item" />
+                    <img className="object-cover rounded-xl" src={urls![0]} alt="item" />
                 </Link>
 
                 <Button 
-                    styles="bg-blue-card font-sans-serif text-white p-3 text-sm mt-3 mt-auto row-start-1 col-start-1 tracking-widest font-bold"
+                    styles="bg-blue-card text-white p-3 text-sm mt-3 mt-auto row-start-1 col-start-1 tracking-widest font-bold"
                     func={ () => setVisible(true) }
                     >
                     ADD TO CART
