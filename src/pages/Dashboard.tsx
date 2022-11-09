@@ -1,17 +1,16 @@
-
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth, db, logout } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-import { doc, setDoc, addDoc } from "firebase/firestore";
-
+import useNotification from "../utils/useNotification";
 import Button from "../components/Button";
+
 const Dashboard:React.FC = () => {
     const [user, loading, error] = useAuthState(auth);
     const [name, setName] = useState("");
     const navigate = useNavigate();
-
+    const notification = useNotification("Successfully Logged out.")
     const fetchUserName = async () => {
         try {
             const q = query(collection(db,"users"), where("uid","==",user?.uid))
@@ -28,19 +27,16 @@ const Dashboard:React.FC = () => {
         if(loading) return
         if(!user) return navigate("/profile/login")
         fetchUserName()
-        const prodRef = collection(db,"products/test/children")
-        addDoc(prodRef,{id:1})
-
     },[user,loading])
-
-   
-    
     
     return (
         <div className="w-screen h-screen grid items-center">
             <h1>Welcome {name}!</h1>
             <div>email: {user?.email}</div>
-            <Button styles="p-2" func={logout}>Logout</Button>
+            <Button styles="p-2" func={()=>{
+                logout()
+                notification()
+                }}>Logout</Button>
         </div>
     )
 }
