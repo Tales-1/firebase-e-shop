@@ -27,7 +27,7 @@ const Header: React.FC = () => {
     
     return(
         <> 
-            <header className="bg-blue-header flex items-center p-4 w-full md:p-5 xl:p-6 z-10">
+            <header className="bg-blue-header flex items-center p-5 w-full z-10 shadow-md">
                 {mobile && <MobileNavBar />}
                 <Link to="/" className="w-36 mx-auto md:w-40 md:mx-0 xl:w-56">
                     <img  src={logo} alt="shop logo" />
