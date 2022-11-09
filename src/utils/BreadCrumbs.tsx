@@ -31,7 +31,7 @@ const BreadCrumbs:React.FC<Props> = ({pathObj}) => {
     ))
 
     return(
-        <nav className="w-full flex p-5 bg-sauvignon-cr flex justify-center">
+        <nav className="w-full p-4 bg-sauvignon-cr flex justify-center">
                 {displayLinks}
         </nav>
     )
