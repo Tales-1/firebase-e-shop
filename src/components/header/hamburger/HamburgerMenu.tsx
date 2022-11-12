@@ -1,16 +1,16 @@
 import hamburgerIcon from "./white-hamburger.png"
-
+import  useToggler  from "../../../utils/useToggler"
 type ToggleFunction = {
-    toggleVisible:React.Dispatch<React.SetStateAction<boolean>>
+    toggleVisible:() => void
 }
 
 const HamburgerMenu: React.FC<ToggleFunction> = ({toggleVisible}) => { 
-   
+    
     return(
         <img 
         className="w- h-6 hover:cursor-pointer md:hidden" 
         src={hamburgerIcon}
-        onClick={()=>{toggleVisible(prev => !prev)}}
+        onClick={toggleVisible}
         alt="hamburger-menu"/>
     )
 }
