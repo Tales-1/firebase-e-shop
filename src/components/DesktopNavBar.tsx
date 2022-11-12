@@ -1,6 +1,6 @@
 import React from "react";
 import  {Link } from "react-router-dom" 
-import menuNames from "./header/menuNames";
+import { menuNames } from "./header/menuNames";
 import { useAppSelector } from "../redux/store/hooks";
 import { selectViewport } from "../redux/features/screenSlice";
 
