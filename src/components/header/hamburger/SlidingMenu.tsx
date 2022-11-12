@@ -1,20 +1,17 @@
 import { Link } from "react-router-dom"
-import menuNames from "../menuNames"
+import { menuNames } from "../menuNames"
 import SearchBar from "../header-items/SearchBar"
 
 type SlidingProps = {
     translate:string,
-    setVisible:React.Dispatch<React.SetStateAction<boolean>>,
+    toggle:() => void,
 }
 
-const SlidingMenu: React.FC<SlidingProps> = ({translate,setVisible}) => { 
+const SlidingMenu: React.FC<SlidingProps> = ({translate,toggle}) => { 
     
-    function closeMenu(){
-        setVisible(prev => !prev)
-    }
 
     const displayMenu:JSX.Element[] = menuNames.map((item,i) => (
-    <li key={i} onClick={closeMenu}>
+    <li key={i} onClick={toggle}>
         <Link to={item.url}>{item.name}</Link>
     </li>
 
@@ -26,7 +23,7 @@ const SlidingMenu: React.FC<SlidingProps> = ({translate,setVisible}) => {
                 {displayMenu}
                 <li 
                     className="animate-bounce hover:cursor-pointer flex justify-end w-screen"
-                    onClick={closeMenu}
+                    onClick={toggle}
                     >
                     <svg 
                     className="rotate-180 w-14 mr-12" 
