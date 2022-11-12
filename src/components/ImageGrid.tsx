@@ -1,7 +1,3 @@
-import kurtaOne from "../images/Kurta-3.jpeg"
-import kurtaTwo from "../images/Kurta-5-1.jpeg"
-import kurtaThree from "../images/Kurta-11-1.jpeg"
-import kurtaFour from "../images/Kurta-7-1.jpeg"
 import heroImg from "../images/her-new.jpeg"
 import Hero from "./Hero"
 import { useAppSelector, useAppDispatch } from "../redux/store/hooks"
@@ -12,7 +8,6 @@ import { selectViewport } from "../redux/features/screenSlice"
 
 const ImageGrid:React.FC = () => {
     const viewportSizes = useAppSelector(selectViewport)
-    const {mobile} = viewportSizes
     
     // const imgArray = [kurtaOne,kurtaTwo]
     // const displayImages = imgArray.map((img,i)=> (
