@@ -13,6 +13,7 @@ interface State {
     translateCart:string
     msg:string
     overlayHidden:boolean
+    hamburgerVisible:boolean
     // type:string
 
 }
@@ -27,7 +28,8 @@ const initialState:State = {
     translate:"-translate-y-full",
     translateCart:"translate-x-full",
     msg:"empty",
-    overlayHidden:true
+    overlayHidden:true,
+    hamburgerVisible:false
     // type:"",
 }
 
@@ -56,10 +58,18 @@ export const screenSlice = createSlice({
             state.translateCart = "translate-x-full"
             state.overlayHidden = true
         },
+        toggleHamburger:(state,action) => {
+            const type = action.payload
+            if(type === "CLOSE"){
+                state.hamburgerVisible = false
+            } else if (type ==="OPEN"){
+                state.hamburgerVisible = true
+            } else { type ==="CLOSE"}
+        }
     }
 })
 
-export const { setWidth, showNotification, hideNotification, hideCart, showCart } = screenSlice.actions
+export const { setWidth, showNotification, hideNotification, hideCart, showCart, toggleHamburger} = screenSlice.actions
 
 export const selectViewport = (state:RootState) => state.screen.viewportSizes
 export const selectTranslate = (state:RootState) => state.screen.translate
@@ -67,6 +77,7 @@ export const selectOverlay = (state:RootState) => state.screen.styles
 export const selectMsg = (state:RootState) => state.screen.msg
 export const selectTranslateCart = (state:RootState) => state.screen.translateCart
 export const selectOverlayHidden = (state:RootState) => state.screen.overlayHidden
+export const selectHamburgerVisible = (state:RootState) => state.screen.hamburgerVisible
 // export const selectType = (state:RootState) => state.screen.type
 
 export default screenSlice.reducer
