@@ -52,7 +52,7 @@ const SlidingCartMenu:React.FC = () => {
                     styles="bg-red text-white p-2 font-extrabold tracking-widest col-span-3 text-2xl"
                     func={()=>{
                         dispatch(hideCart())
-                        navigate("/checkout")
+                        navigate("/cart")
                     }}
                         >
                     View Bag
