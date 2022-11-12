@@ -57,8 +57,8 @@ const ProductPage:React.FC = () => {
                     <h1 className="text-2xl lg:text-4xl font-bold font-serif text-center md:text-start">{name}</h1>
                     <span className="text-xl lg:text-2xl font-bold text-center md:text-start">£{price}</span>  
                      
-                    <div className="grid gap-5 font-sans-serif">
-                        <h3 className="lg:text-lg">Select Size</h3>         
+                    <div className="grid gap-5 font-sans-serif mx-auto mt-3">
+                        <h3 className="lg:text-lg text-center">Select Size</h3>         
                         <div className="flex flex-wrap flex-row gap-3">
                             <Button styles="py-1 px-2 border-2 border-blue-card rounded-md">Small</Button>
                             <Button styles="p-1 px-2 border-2 border-blue-card rounded-md">Medium</Button>
