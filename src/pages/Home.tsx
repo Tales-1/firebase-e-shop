@@ -1,12 +1,15 @@
 import ImageGrid from "../components/ImageGrid"
-
-
-const Home:React.FC = () =>{
-    
+import Header from "../components/header/Header"
+import SlidingCartMenu from "../components/SlidingCartMenu"
+import { Outlet, useLocation } from "react-router-dom"
+const Home:React.FC = () => {
+    const location = useLocation()
     return(
         <div className="h-[89vh] lg-2:h-[82vh]">
-           <ImageGrid />
-
+            <Header />
+            <SlidingCartMenu />
+            {location.pathname === "/" && <ImageGrid />}
+            <Outlet />
         </div>
     )
 }
