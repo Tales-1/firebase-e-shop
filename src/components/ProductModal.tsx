@@ -14,7 +14,7 @@ const ProductModal:React.FC<Props> = ({item}) => {
     const currentItem = useAppSelector(selectCurrentItem)
     const [cartItem,setCartItem] = useState({...currentItem,qty:1})
     
-    console.log(item)
+    
     return(
             <div className="fixed inset-0 grid justify-center items-center z-20 before:absolute before:inset-0 before:bg-black before:opacity-30 before:-z-10">
                 <article className="grid gap-3 bg-white items-center w-11/12 mx-auto p-4 justify-center grid-cols-4 md:grid-cols-2 max-w-3xl">
