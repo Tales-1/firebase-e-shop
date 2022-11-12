@@ -36,9 +36,7 @@ export const cartSlice = createSlice({
                 })
             } else { state.shoppingCart.push(action.payload) }
             let total = price * qty
-            console.log(total)
             state.total +=total
-            console.log(state.total)  
         },
         removeFromCart:(state,action) => { 
             const {price, qty} = action.payload
