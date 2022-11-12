@@ -1,3 +1,4 @@
+
 const menuNames:Array<{name:string,url:string, id?:number,route?:string}> = [
     {
         name:"Home",
@@ -5,27 +6,28 @@ const menuNames:Array<{name:string,url:string, id?:number,route?:string}> = [
     },
     {
         name:"Catalogue",
-        url:"/collection",
+        url:"collection",
     },
     {   
         id:1,
         name:"Kurtas",
-        url:"/collection/kurtas",
+        url:"collection/kurtas",
     },
     {   
         id:2,
         name:"Casual",
-        url:"/collection/casual",
+        url:"collection/casual",
     },
     {   
         id:3,
         name:"Dresses",
-        url:"/collection/dresses",
+        url:"collection/dresses",
     },
     {
         name:"Contact-us",
-        url:"/contact-us",
+        url:"contact-us",
     },
 ]
 
-export default menuNames
+
+export {menuNames}
