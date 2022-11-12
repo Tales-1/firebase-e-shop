@@ -72,6 +72,13 @@ export const dataSlice = createSlice({
                 return item.id === action.payload
             })
             state.currentItem = arr[0]
+        },
+        // REFACTOR
+        searchItem:(state,action) => {
+            let searchQuery = state.products.filter((item) => {
+                return item.id === action.payload
+            })
+            state.currentItem = searchQuery[0]
         }
     },
 
@@ -91,7 +98,7 @@ export const dataSlice = createSlice({
     }
 })
 
-export const { filter, findCurrent } = dataSlice.actions
+export const { filter, findCurrent, searchItem } = dataSlice.actions
 
 export const selectStatus = (state:RootState) => state.fetcher.status
 export const selectData = (state:RootState) => state.fetcher.products
