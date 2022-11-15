@@ -2,6 +2,8 @@ import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/t
 import dataReducer from "../features/dataSlice"
 import screenReducer from "../features/screenSlice"
 import cartReducer from "../features/cartSlice"
+import userReducer from "../features/userSlice"
+
 import { persistReducer, persistStore,FLUSH,
   REHYDRATE,
   PAUSE,
@@ -21,7 +23,8 @@ const reducers = combineReducers(
     {
       fetcher:dataReducer,
       cart:cartReducer,
-      screen:screenReducer
+      screen:screenReducer,
+      user:userReducer
   })
 
 const persistedReducers = persistReducer(persistConfig,reducers)
@@ -32,6 +35,7 @@ export const store = configureStore({
         getDefaultMiddleware({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+                false:false
             },
         }),
   devTools: process.env.NODE_ENV !== 'production',

@@ -4,6 +4,7 @@ import { RootState } from "../store/store";
 
 interface State {
     viewportSizes:{
+        innerWidth:number,
         mobile:boolean,
         tablet:boolean,
         desktop:boolean
@@ -20,9 +21,10 @@ interface State {
  
 const initialState:State = {
     viewportSizes:{
+        innerWidth:window.innerWidth,
         mobile:window.innerWidth < 768,
         tablet:window.innerWidth > 768 && window.innerWidth < 1030,
-        desktop:window.innerWidth > 1030
+        desktop:window.innerWidth > 1023,
     },
     styles:"before:absolute before:inset-0 before:opacity-30",
     translate:"-translate-y-full",
@@ -38,6 +40,7 @@ export const screenSlice = createSlice({
     initialState,
     reducers:{
         setWidth:(state,action) => {
+            state.viewportSizes.innerWidth = action.payload
             state.viewportSizes.mobile = action.payload < 768
             state.viewportSizes.tablet = action.payload > 768 && action.payload < 1030,
             state.viewportSizes.desktop = action.payload > 1030

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, AsyncThunkAction, PayloadActionCreator } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 
 import { getFirestore, collection, getDocs } from "firebase/firestore"
@@ -59,7 +59,7 @@ const initialState:State = {
 export const dataSlice = createSlice({
     name:"products",
     initialState,
-    reducers:{
+    reducers: {
         filter:(state,action) => {
            state.filtered = state.products.filter((item) => {
             if(item.type !== action.payload) return false
@@ -79,26 +79,49 @@ export const dataSlice = createSlice({
                 return item.id === action.payload
             })
             state.currentItem = searchQuery[0]
+        },
+        sortItems:(state,action) => { 
+            const type = action.payload
+            switch (type) {
+                case "LOW_TO_HIGH":
+                    state.filtered.sort((a,b) => a.price! - b.price! )
+                    break;
+                case "HIGH_TO_LOW":
+                    state.filtered.sort((a,b) => b.price! - a.price! )
+                    break;
+                case "A_TO_Z":
+                    state.filtered.sort((a,b) => {
+                        const nameA = a.name ? a.name : ""
+                        const nameB = b.name ? b.name : ""
+                        return nameA.localeCompare(nameB)
+                    })
+                    break;
+                case "Z_TO_A":
+                    state.filtered.sort((a,b) => {
+                        const nameA = a.name ? a.name : ""
+                        const nameB = b.name ? b.name : ""
+                        return nameB.localeCompare(nameA)
+                    })
+                    break;
+            }
+        }},
+        extraReducers:(builder) => {
+            builder
+                .addCase(fetchData.pending, (state) => {
+                    state.status = "loading"
+                })
+                .addCase(fetchData.fulfilled, (state,action)=>{
+                    state.status = "fulfilled"
+                    state.products = action.payload
+                })
+                .addCase(fetchData.rejected,(state,action) => {
+                    state.status = "rejected"
+                    state.error = action.error.message
+                })
         }
-    },
+    })
 
-    extraReducers: (builder) => {
-        builder
-            .addCase(fetchData.pending, (state) => {
-                state.status = "loading"
-            })
-            .addCase(fetchData.fulfilled, (state,action) => {
-                state.status = "fulfilled"
-                state.products = action.payload
-            })
-            .addCase(fetchData.rejected, (state,action) => {
-                state.status = "rejected"
-                state.error = action.error.message
-            })
-    }
-})
-
-export const { filter, findCurrent, searchItem } = dataSlice.actions
+export const { filter, findCurrent, searchItem, sortItems } = dataSlice.actions
 
 export const selectStatus = (state:RootState) => state.fetcher.status
 export const selectData = (state:RootState) => state.fetcher.products

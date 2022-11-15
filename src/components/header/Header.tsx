@@ -1,13 +1,13 @@
 import { useEffect} from "react"
 import { Link } from "react-router-dom"
-import MobileNavBar from "./hamburger/MobileNavBar"
-import ShoppingBag from "./header-items/ShoppingBag"
-import logo from "./icons/mibby-logo.png"
-import Profile from "./header-items/Profile"
+import MobileNavBar from "./header-items/hamburger/MobileNavBar"
+import CartBtn from "./header-items/CartBtn"
+import logo from "./icons/newww.jpeg"
+import ProfileBtn from "./header-items/ProfileBtn"
 import SearchBar from "./header-items/SearchBar"
-import { useAppDispatch, useAppSelector } from "../../redux/store/hooks"
-import { selectViewport, setWidth } from "../../redux/features/screenSlice"
-import DesktopNavBar from "../DesktopNavBar"
+import { useAppDispatch, useAppSelector } from "redux/store/hooks"
+import { selectViewport, setWidth } from "redux/features/screenSlice"
+import DesktopNavBar from "./DesktopNavBar"
 
 
 const Header: React.FC = () => {
@@ -27,18 +27,18 @@ const Header: React.FC = () => {
     
     return(
         <> 
-            <header className="bg-blue-header flex items-center p-5 w-full z-10 shadow-md">
+            <header className="bg-blue-header flex items-center p-5 w-full z-10 shadow-md sticky top-0">
                 {mobile && <MobileNavBar />}
-                <Link to="/" className="w-36 mx-auto md:w-40 md:mx-0 xl:w-56">
+                <Link to="/" className="w-24 md:28 mx-auto md:mx-0">
                     <img  src={logo} alt="shop logo" />
                 </Link>  
 
                 {(tablet || desktop) && <SearchBar />}
 
-                <Profile />
-                <ShoppingBag />
+                <ProfileBtn />
+                <CartBtn />
             </header>
-            {tablet || desktop ? <DesktopNavBar /> : null}
+            <DesktopNavBar />
         </>
 
     )

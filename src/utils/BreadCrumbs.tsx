@@ -1,38 +1,30 @@
-import { useLocation, useNavigate, Link, useNavigationType } from "react-router-dom";
+import { useLocation, Link,  } from "react-router-dom";
+import useBreadCrumbs from "use-react-router-breadcrumbs"
 
-type Props = {
-    pathObj?: {
-        path:string 
-        name:string 
-    }
-}
 
 interface Route {
     name:string
     path:string 
 }
 
-const BreadCrumbs:React.FC<Props> = ({pathObj}) => { 
-    const navigate = useNavigate()
-    const routes:Route[] = [
-        {   
-            name:"Home",
-            path:"/"
-                    },
-        { 
-            name:"collection",
-            path:"/collection"
-        },    
-    ]
-    if(pathObj !== undefined) {routes.push(pathObj)}
-   
-    const displayLinks = routes.map((route,index) => ( 
-        <Link key={index} to={route.path}> - {route.name} --</Link>
-    ))
-
+const BreadCrumbs = ({}) => { 
+    const breadcrumbs = useBreadCrumbs()
+    const location = useLocation()
+    const { pathname } = location
+    
     return(
-        <nav className="w-full p-4 bg-sauvignon-cr flex justify-center">
-                {displayLinks}
+        <nav className="w-full p-4 bg-sauvignon-cr flex justify-center gap-4">
+                {breadcrumbs.map(({ match,breadcrumb }, i) => {
+                    if(i === 1) return null
+                    else{
+                        let currentLink = match.pathname === pathname
+                        return (<Link key ={match.pathname} to={match.pathname} className={currentLink ? "text-black cursor-default" : "text-blue-card font-bold"}>
+                        <span className={currentLink ? "no-underline" :"underline underline-offset-2 hover:opacity-75"}>{breadcrumb} </span>
+                        {i !== breadcrumbs.length-1 && <span className="ml-3 text-black">/</span>}
+                    </Link>)}
+                })
+                
+                }
         </nav>
     )
 }
