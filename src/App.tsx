@@ -9,28 +9,32 @@ import useStoreUser from "./utils/hooks/useStoreUser";
 import Welcome from "pages/WelcomePg";
 import { selectLoading } from "redux/features/screenSlice";
 import { useAppSelector } from "redux/store/hooks";
-import timeLeft from "utils/timeLeft";
+import ScrollToTop from "utils/ScrollToTop";
 
 const App: React.FC = () => {
-  const {status, fetch, dispatch} = useFetcher()
+  const {status, fetch, dispatch, products} = useFetcher()
   const {isLoggedIn} = useStoreUser()
   const isVisible = useAppSelector(selectLoading)
-  
+  console.log("app:",{isVisible, products})
   useEffect(()=>{
-    if(status === "loading"){
-      if(timeLeft() < 1000){
+    if(status === "idle"){
+      console.log("hello")
         fetch()
-      }
+    }
+    else if (status === "loading") return 
+    else if (status === "rejected"){
+      return alert("Error fetching data")
     }
   },[status,dispatch])
   
 
   return (
-    <div className="relative flex flex-col h-fit">
+    <div className="relative flex flex-col">
       <Welcome isVisible={isVisible}/>
       <Notification />
       <ScreenOverlay />
         <Router>
+          <ScrollToTop />
           <AnimatedRoutes isLoggedIn={isLoggedIn} />
         </Router>
       

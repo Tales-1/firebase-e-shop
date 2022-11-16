@@ -8,9 +8,7 @@ import LandingPage from "./LandingPg"
 const ParentRoute:React.FC = () => {
     const location = useLocation()
     return(
-        <div 
-            className="h-full"
-            >
+        <div className="h-fit">
             <Header />
             <SlidingCartMenu />
             {location.pathname === "/" && <LandingPage />}

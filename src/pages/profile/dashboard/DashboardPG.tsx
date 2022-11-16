@@ -7,7 +7,7 @@ import Button from "components/Button";
 import { Outlet } from "react-router-dom";
 import useNotification from "utils/hooks/useNotification";
 import DashboardMenu from "./DashboardMenu";
-import Spinner from "utils/Spinner";
+import Spinner from "components/Spinner";
 import { removeUser } from "redux/features/userSlice"
 import { useAppDispatch } from "redux/store/hooks"
 

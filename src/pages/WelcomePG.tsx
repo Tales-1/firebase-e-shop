@@ -13,7 +13,7 @@ type Props = {
 const Welcome:React.FC<Props> = ({isVisible}) => { 
     const dispatch = useAppDispatch()
     const isHidden = useAppSelector(selectHidden)
-    
+    console.log("welcome", {isHidden})
     const sentence = {
         hidden:{opacity:1},
         visible:{
@@ -44,6 +44,7 @@ const Welcome:React.FC<Props> = ({isVisible}) => {
     // DISPLAY WELCOME COMPONENT ONLY IF PAGE IS BEING OPENED FOR THE FIRST TIME
       useEffect(()=>{
         let session = sessionStorage.getItem("session")
+        console.log("before onload")
         window.onload = () => {
           setTimeout(()=>{
             if(session !=="TRUE"){
@@ -52,6 +53,7 @@ const Welcome:React.FC<Props> = ({isVisible}) => {
             }
           },1500)
         }
+
      },[])
      /// Render logic
     return (

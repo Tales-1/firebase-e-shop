@@ -1,7 +1,7 @@
 import { useLocation, useParams, } from "react-router-dom"
 import { ReactNode, useEffect } from "react"
 import ProductCard from "components/products/ProductCard"
-import Spinner from "utils/Spinner"
+import Spinner from "components/Spinner"
 import BreadCrumbs from "utils/BreadCrumbs"
 import { selectStatus, selectFiltered, filter } from "redux/features/dataSlice"
 import { useAppDispatch, useAppSelector } from "redux/store/hooks"

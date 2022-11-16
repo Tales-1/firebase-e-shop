@@ -1,5 +1,5 @@
 import {useState, useEffect, SetStateAction} from "react"
-import Spinner from "utils/Spinner"
+import Spinner from "components/Spinner"
 import { Link, useNavigate } from "react-router-dom"
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../firebase"
 import { useAuthState } from "react-firebase-hooks/auth"

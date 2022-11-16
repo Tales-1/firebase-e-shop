@@ -2,7 +2,7 @@ import { useStyles } from "../DashboardPg"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../../firebase";
 import { useEffect, useState } from "react";
-import Spinner from "utils/Spinner";
+import Spinner from "components/Spinner";
 type UserDetails = {
     name:string | null
     email:string | null
