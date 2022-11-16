@@ -35,14 +35,16 @@ export const cartSlice = createSlice({
                     }
                 })
             } else { state.shoppingCart.push(action.payload) }
-            let total = price * qty
-            state.total +=total
+            let total = (price * qty).toFixed(2)
+            const final = parseFloat(total)
+            state.total +=final
         },
         removeFromCart:(state,action) => { 
             const {price, qty} = action.payload
-            let total =  price * qty
+            let total =  (price * qty).toFixed(2)
             state.shoppingCart = state.shoppingCart.filter(item => item.id !== action.payload.id)
-            state.total = Math.round((state.total- total) * 100) /100
+            const final = parseFloat(total)
+            state.total = Math.round(( state.total - final) * 100) /100
         },
         increment:(state,action) => {
             const {id, price} = action.payload
@@ -50,7 +52,9 @@ export const cartSlice = createSlice({
             let finditem = state.shoppingCart.find(item => item.id === id)
             let newQty = finditem!.qty! + 1
             let updatedItem = {...finditem, qty:newQty }
-            state.total = Math.round((state.total+price) * 100) / 100
+            let total = (state.total+price).toFixed(2)
+            const final = parseFloat(total)
+            state.total = Math.round(final * 100) / 100
             state.shoppingCart[currIndex] = updatedItem
         },
         decrement:(state,action) => {
@@ -64,12 +68,19 @@ export const cartSlice = createSlice({
                 let updatedItem = {...finditem, qty:newQty }
                 state.shoppingCart[currIndex] = updatedItem
             }
-            state.total = Math.round((state.total-price) * 100) / 100
+            let total = (state.total-price).toFixed(2)
+            const final = parseFloat(total)
+            state.total = Math.round(final * 100) / 100
+        },
+        // Empty the cart, testing purposes
+        emptyCart:(state) => {
+            state.shoppingCart = []
+            state.total = 0
         }
     }
 })
 
-export const { addToCart, removeFromCart,increment, decrement } = cartSlice.actions
+export const { addToCart, removeFromCart,increment, decrement, emptyCart } = cartSlice.actions
 
 export const selectCart = (state:RootState) => state.cart.shoppingCart
 export const selectTotal = (state:RootState) => state.cart.total
