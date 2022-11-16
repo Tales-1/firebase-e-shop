@@ -14,8 +14,8 @@ const SlidingCartMenu:React.FC = () => {
     const navigate = useNavigate()
     return (
         <aside className={`h-full w-11/12 max-w-md fixed top-0 right-0 pr-3 
-                            flex flex-col gap-6 items-center bg-white 
-                            transition:all duratio  -in-out ${translate} z-50 shadow-lg
+                            flex flex-col gap-6 items-center bg-white transition-all ease-in-out duration-500
+                            ${translate} z-50 shadow-lg
                             `}>
 
             <h1 className="font-serif text-3xl mt-5 border-b-2 pb-3 border-gray w-11/12">Cart Items </h1>
