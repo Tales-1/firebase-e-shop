@@ -1,7 +1,7 @@
 import Header from "components/header/Header"
 import SlidingCartMenu from "components/cart/SlidingCartMenu"
 import { Outlet, useLocation } from "react-router-dom"
-import Footer from "components/misc/Footer"
+import Footer from "components/misc/Footer.1"
 import LandingPage from "./Landing_PG"
 
 
