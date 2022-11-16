@@ -1,15 +1,20 @@
 import heroImg from "images/hero-img.jpg"
 import {motion} from "framer-motion"
+import { useState, useEffect } from "react"
 // FIND A SOLUTION TO THE MOBILE KEY PAIRING NOT BEING READ OR UNDERSTOOD BY TYPESCRIPT AT THE MOMENT I'VE PUT DOWN ANY
 // Property 'mobile' does not exist on type '{ mobile?: boolean | undefined; tablet?: boolean | undefined; desktop?: boolean | undefined; } | undefined'.ts(2339)
 
 import { Link } from "react-router-dom"
 import Button from "components/misc/Button"
+import Welcome from "pages/Welcome_PG";
 
 const Hero:React.FC = () => {
     let duration = .6
     let pos = -60
+
     return (
+        <>
+      
         <div className="relative grid h-screen max-h-[94vh] max-w-full">
             <div className="grid row-start-1 col-start-1 bg-black overflow-hidden before:absolute before:block before:inset-0 before:bg-black before:opacity-[0.22] -z-10">
                 <img className="object-cover h-full w-full" src={heroImg} alt="woman wearing a dress" />
@@ -40,6 +45,7 @@ const Hero:React.FC = () => {
             </Link>
             </div>
         </div>
+        </>
     )
 }
 
