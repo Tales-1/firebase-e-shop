@@ -18,15 +18,13 @@ const Checkout:React.FC = () =>{
     const gridStyles = `grid-rows-[repeat(${cartItems.length},minmax(0,1fr))]`
     const variant = {
         hidden:{
-            transform:"scale(0)"
+            opacity:0
         },
         show:{
-            transform:"scale(1)",
+            opacity:1,
             transition:{
                 duration:.5,
                 delay:0.1,
-                type:"spring",
-                stiffness:100
             }
         }
     }

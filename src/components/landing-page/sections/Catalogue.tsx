@@ -7,7 +7,7 @@ const Catalogue:React.FC = () =>{
     
     
     return(
-        <section id="section-one" className="gap-6 bg-blue-white pb-16" >
+        <section id="section-one" className="gap-6 bg-blue-white py-8" >
             <motion.div 
                 className="lg-2:w-[90%] mx-auto h-full overflow-hidden"
                 initial={{opacity:0}}
