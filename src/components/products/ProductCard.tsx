@@ -25,13 +25,7 @@ const ProductCard:React.FC<Props> = ({name,price,urls,id}) => {
                     <img className="rounded-md max-h-card h-full w-full object-cover" src={urls?.[0]} alt="item" />
                 </Link>
 
-                <Button 
-                    styles="bg-blue-card text-white p-3 text-sm mt-3 mt-auto row-start-1 col-start-1 tracking-widest font-bold"
-                    func={ () => setVisible(true) }
-                    >
-                    ADD TO CART
-                </Button>
-                {visible ? <ProductModal item={{name,price,urls}} /> : null}
+                
                 
                 <div className="absolute grid row-start-1 col-start-1 text-lg w-fit h-fit -right-10">
                    <img className="w-24 row-start-1 col-start-1 rotate-" src={priceTag} alt="price tag" />
