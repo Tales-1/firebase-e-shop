@@ -3,7 +3,6 @@
 The aim of this CRA is to make a multipage fake virtual store to put my learning to use. Having just learnt React and the fundamentals I see this as a great
 opportunity test my comprehension of the React ecosystem.
 
-
 I will also be learning & applying tailwindcss and Typescript.js for the first time.
 
 ## Key features of the Website
@@ -11,6 +10,7 @@ I will also be learning & applying tailwindcss and Typescript.js for the first t
 Fetch and display products
 User Authentication
 "Purchasing" items
+Animated transitions
 Order history recorded and stored in firebase storage upon "purchase"
 
 ## React fundamentals applied:
@@ -24,11 +24,11 @@ Order history recorded and stored in firebase storage upon "purchase"
 - React Children
 
 
-### Skills/programs learnt and applied during this project:
+## Skills/programs learnt and applied during this project:
 
 - Typescript 
 - Tailwindcss
-- Redux
+- Redux toolkit
 - Firebase:
   - Database
   - Authentication
