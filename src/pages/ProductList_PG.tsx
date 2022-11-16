@@ -19,7 +19,6 @@ interface ProductObject {
     url?:string[]
 }
 const ProductListPg:React.FC = () =>{
-    console.log(useLocation().hash)
     const filteredArray = useAppSelector(selectFiltered)
     const status = useAppSelector(selectStatus)
     const params:string = useParams().name!
@@ -44,7 +43,7 @@ const ProductListPg:React.FC = () =>{
                     />)
         
     })
-   
+    
     return(
         <motion.div 
             className="container h-fit min-w-full mb-16"
@@ -59,13 +58,17 @@ const ProductListPg:React.FC = () =>{
                 <h1 className="text-4.5xl lg:text-5xl font-bold font-serif text-center row-start-1 col-start-1 col-span-3">{params?.toUpperCase()}</h1>
                 <img src={Underline} alt="underline" className="w-2/5 min-w-[10rem] max-w-[14rem] row-start-2 col-start-1 col-span-3 mx-auto"/>
             </div>
-            
+           {filteredArray.length ? 
             <main className="flex flex-col lg-2:flex-row mt-6 gap-6">
             <SortItems />
                 <div className="bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-stretch mx-auto justify-items-center md:flex-row md:flex-wrap gap-10 md:w-10/12 lg-2:w-8/12 lg:ml-auto lg:mr-20">
                     {status === "loading" ? <Spinner /> :  displayItems }    
                 </div>
-            </main>
+            </main> : 
+                <div className="h-[50vh] w-screen bg-white grid items-center">
+                    <h2 className="text-center text-2xl">Coming Soon...</h2>
+                </div>
+            }
         </motion.div>
         
     )
