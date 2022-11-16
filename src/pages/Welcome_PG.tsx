@@ -1,12 +1,19 @@
 import Logo from "../components/header/icons/newww-clear.png"
 import { AnimatePresence, motion } from "framer-motion"
-import { useState } from "react"
+import { useEffect, useLayoutEffect } from "react"
+import { useAppDispatch, useAppSelector } from "redux/store/hooks"
+import { selectHidden } from "redux/features/screenSlice"
+import { selectLoading, setLoaded } from "redux/features/screenSlice";
+
 
 type Props = {
     isVisible:boolean
 }
 
 const Welcome:React.FC<Props> = ({isVisible}) => { 
+    const dispatch = useAppDispatch()
+    const isHidden = useAppSelector(selectHidden)
+    
     const sentence = {
         hidden:{opacity:1},
         visible:{
@@ -24,12 +31,34 @@ const Welcome:React.FC<Props> = ({isVisible}) => {
             y:0
         }
     }
-  
     let line = "Welcome to "
+
+    // HIDE COMPONENT IF THE PAGE HAS BEEN REFRESHED
+    useLayoutEffect(()=>{
+        let session = sessionStorage.getItem("session")
+        if(session === "TRUE"){
+          dispatch(setLoaded("HIDE"))
+        }
+      },[])
+      
+    // DISPLAY WELCOME COMPONENT ONLY IF PAGE IS BEING OPENED FOR THE FIRST TIME
+      useEffect(()=>{
+        let session = sessionStorage.getItem("session")
+        console.log(session)
+        window.onload = () => {
+          setTimeout(()=>{
+            if(session !=="TRUE"){
+              dispatch(setLoaded("LOADED"))
+              sessionStorage.setItem("session", "TRUE")
+            }
+          },1500)
+        }
+     },[])
+     /// Render logic
     return (
         <AnimatePresence>
        { isVisible ? <motion.div 
-                className="fixed w-screen h-screen grid place-items-center bg-blue-card z-[9999]"
+                className={`fixed ${isHidden ? "hidden" : "visible"} w-screen h-screen grid place-items-center bg-blue-card z-[9999]`}
                 initial={{translateY:0}}
                 animate={{opacity:1, transition:{duration:0.4}, translateY:0}}
                 exit={{translateY:"-100%", transition:{duration:1,ease:"easeInOut"}}}
