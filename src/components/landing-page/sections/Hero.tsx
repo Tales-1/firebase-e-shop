@@ -14,9 +14,9 @@ const Hero:React.FC = () => {
     return (
         <>
       
-        <div className="relative grid h-screen max-w-full">
+        <div className="relative grid max-w-full">
             <div className="grid row-start-1 col-start-1 bg-black overflow-hidden before:absolute before:block before:inset-0 before:bg-black before:opacity-[0.22] -z-10">
-                <img className="object-cover h-full w-full" src={heroImg} alt="woman wearing a dress" />
+                <img className="object-cover h-[95vh] w-full" src={heroImg} alt="woman wearing a dress" />
             </div>      
             <div className="text-center row-start-1 mx-auto col-start-1 w-3/5 md:9/10 flex flex-col gap-5 md:gap-9 xl:px-20 my-auto xl:mt-28 items-center">
             <motion.h1 

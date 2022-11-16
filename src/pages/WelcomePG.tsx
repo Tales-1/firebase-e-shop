@@ -45,14 +45,12 @@ const Welcome:React.FC<Props> = ({isVisible}) => {
       useEffect(()=>{
         let session = sessionStorage.getItem("session")
         console.log("before onload")
-        window.onload = () => {
           setTimeout(()=>{
             if(session !=="TRUE"){
               dispatch(setLoaded("LOADED"))
               sessionStorage.setItem("session", "TRUE")
-            }
-          },1500)
-        }
+                }
+            }, 1500)
 
      },[])
      /// Render logic
