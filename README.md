@@ -33,7 +33,16 @@ Order history recorded and stored in firebase storage upon "purchase"
   - Database
   - Authentication
 - Cloudinary 
+- Framer Motion
 
+
+## Improvements to make:
+
+- Store images in firestore
+- Add lazy loading to improve performance
+- Add another section to the landing page
+- Add favourite function to product items
+- Store fake orderhistory and favourited items in firebase database
 
 ## EDIT
 ** Though it isn't a live e-commerce shop, it is quite possible in the near future that this app ships to production. For that matter, during the building 
