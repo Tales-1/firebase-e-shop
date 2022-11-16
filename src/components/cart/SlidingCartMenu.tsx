@@ -1,7 +1,7 @@
 import { useAppSelector, useAppDispatch } from "redux/store/hooks"
 import { emptyCart, selectCart, selectTotal } from "redux/features/cartSlice"
 import { selectTranslateCart, hideCart } from "redux/features/screenSlice"
-import Button from "../misc/Button"
+import Button from "../Button"
 import { useNavigate } from "react-router-dom"
 import DisplayCartItems from "./DisplayCartItems"
 

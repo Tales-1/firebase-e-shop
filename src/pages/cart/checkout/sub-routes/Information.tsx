@@ -1,3 +1,4 @@
+import Button from "components/Button"
 import { Link } from "react-router-dom"
 
 const Information:React.FC = () => {
@@ -19,9 +20,9 @@ const Information:React.FC = () => {
                         <input type="text" className="border-2 border-gray-600 p-2 col-span-2" placeholder="Postcode" required/>
                         <input type="text" className="border-2 border-gray-600 p-2 col-span-2" placeholder="Phone (optional)"/>
                         
-                        <button className="bg-blue-header justify-self-center md:justify-self-end p-3 text-white font-bold col-start-1 col-span-2">
-                            <Link to="/checkout/delivery"> Continue to Delivery</Link>
-                        </button>
+                        <Button styles="bg-blue-header justify-self-center p-3 text-white font-bold col-start-1 col-span-2 w-full">
+                            <Link to="/checkout/delivery"> CONTINUE TO DELIVERY</Link>
+                        </Button>
                     </form>
             </div>
     )

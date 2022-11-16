@@ -1,4 +1,4 @@
-import Logo from "../components/header/icons/newww-clear.png"
+import Logo from "../components/header/icons/logo.png"
 import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useLayoutEffect } from "react"
 import { useAppDispatch, useAppSelector } from "redux/store/hooks"
@@ -44,7 +44,6 @@ const Welcome:React.FC<Props> = ({isVisible}) => {
     // DISPLAY WELCOME COMPONENT ONLY IF PAGE IS BEING OPENED FOR THE FIRST TIME
       useEffect(()=>{
         let session = sessionStorage.getItem("session")
-        console.log(session)
         window.onload = () => {
           setTimeout(()=>{
             if(session !=="TRUE"){

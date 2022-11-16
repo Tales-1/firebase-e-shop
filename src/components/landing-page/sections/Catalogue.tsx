@@ -8,7 +8,7 @@ const Catalogue:React.FC = () =>{
     
     
     return(
-        <section id="section-one" className="gap-6 bg-blue-white py-2" >
+        <section id="section-one" className="gap-6 bg-blue-white pb-16" >
             <motion.div 
                 className="lg-2:w-[90%] mx-auto h-full overflow-hidden"
                 initial={{opacity:0}}
@@ -16,7 +16,7 @@ const Catalogue:React.FC = () =>{
                 viewport={{once:true,amount:0.25}}
                 
                     >
-                <div className="flex flex-col-reverse lg-2:flex-row h-full lg-2:w-2/3 shadow-xl mx-auto bg-white">
+                <div className="flex flex-col-reverse lg-2:flex-row h-full lg-2:w-2/3 mx-auto bg-white shadow-[0_0_15px_rgba(0,0,0,0.25)]">
                     <div className="lg-2:w-full">
                         <div className="
                             flex relative z-0 
@@ -46,7 +46,7 @@ const Catalogue:React.FC = () =>{
                             </div>
                     </div>
                    
-                    <div className="bg-sauvignon-cr relative w-full shadow-[0_0_15px_rgba(0,0,0,0.25)]
+                    <div className="bg-sauvignon-cr relative w-full
                                      grid place-items-center text-center">
                         {/* <div className="row-start-1 lg-2:h-1/4"></div> */}
                         <div className="bg-sauvignon-cr py-12 grid place-items-center">

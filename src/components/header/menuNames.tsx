@@ -21,7 +21,7 @@ const menuNames:Array<{name:string,url:string, id?:number,route?:string}> = [
         url:"collection/dresses",
     },
     {
-        name:"Contact-us",
+        name:"Contact Us",
         url:"contact-us",
     },
 ]

@@ -1,10 +1,7 @@
-import Button from "components/misc/Button"
 import priceTag from "../header/icons/red-label-two.png"
 import { Link, useLocation } from "react-router-dom"
 import { useAppDispatch } from "redux/store/hooks"
 import { findCurrent } from "redux/features/dataSlice"
-import ProductModal from "./ProductModal"
-import {useState} from "react"
 
 type Props = {
     name:string | undefined
@@ -17,7 +14,7 @@ type Props = {
 const ProductCard:React.FC<Props> = ({name,price,urls,id}) => { 
     const { pathname } = useLocation()
     const dispatch = useAppDispatch()
-    const [visible, setVisible] = useState(false)
+
     return(
         <article className="min-h-card w-full max-w-[17rem] rounded-lg flex flex-col items-center gap-2 hover:scale-105 transition-all">
             <div className="grid relative shadow-lg h-full w-full">

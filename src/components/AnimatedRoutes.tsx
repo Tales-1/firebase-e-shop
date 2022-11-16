@@ -1,19 +1,17 @@
-import { useLocation } from "react-router-dom"
-import {Route,Routes,Navigate} from "react-router-dom"
-import {AnimatePresence} from "framer-motion"
-//PARENT ROUTES
+import { Route,Routes,Navigate, useLocation } from "react-router-dom"
 
+//PARENT ROUTES
 import ParentRoute from "pages/ParentRoute";
-import Protected from "pages/Protected_PG";
-import ProductList_PG from "pages/ProductList_PG";
+import Protected from "pages/ProtectedPG";
+import ProductList_PG from "pages/ProductListPG";
 import Checkout_PG from "pages/cart/checkout/Checkout_PG";
-import Product_PG from "pages/Product_PG";
-import Login_PG from "pages/profile/Login_PG";
+import Product_PG from "pages/ProductPG";
+import Login_PG from "pages/profile/LoginPG";
 import Cart_PG from "pages/cart/Cart_PG";
-import Register_PG from "pages/profile/Register_PG";
-import Reset_PG from "pages/profile/Reset_PG"
-import Contact_PG from "pages/Contact_PG";
-import Dashboard_PG from "pages/profile/dashboard/Dashboard_PG";
+import Register_PG from "pages/profile/RegisterPG";
+import Reset_PG from "pages/profile/ResetPG"
+import Contact_PG from "pages/ContactPG";
+import Dashboard_PG from "pages/profile/dashboard/DashboardPG";
 
 // SUB-ROUTE COMPONENTS
 import Orderhistory from "pages/profile/dashboard/sub-routes/Orderhistory";
@@ -23,6 +21,7 @@ import Delivery from "pages/cart/checkout/sub-routes/Delivery";
 import Information from "pages/cart/checkout/sub-routes/Information";
 import Payment from "pages/cart/checkout/sub-routes/Payment";
 import Review from "pages/cart/checkout/sub-routes/Review";
+
 type Props = {
     isLoggedIn:boolean
 }

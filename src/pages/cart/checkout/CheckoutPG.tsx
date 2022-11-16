@@ -1,5 +1,5 @@
 
-import Logo from "components/header/icons/mibby-logo-black.png"
+import Logo from "components/header/icons/logo.png"
 import { selectCart, selectTotal } from "redux/features/cartSlice"
 import { useAppSelector } from "redux/store/hooks"
 import { useState,useEffect } from "react"
@@ -31,7 +31,7 @@ const Checkout:React.FC = () => {
         }
     },[])
     return(
-        <div className="flex flex-col lg:flex-row h-full w-5/6 max-w-[95rem] mx-auto lg:mx-0 lg:ml-auto font-sans-serif">
+        <div className="flex flex-col lg:flex-row h-screen w-5/6 max-w-[95rem] mx-auto lg:mx-0 lg:ml-auto font-sans-serif">
             <section className="flex flex-col gap-4 h-full w-3/4 mx-auto">
                 <img src={Logo} alt="logo" className="w-36 lg:w-52 cursor-pointer" onClick={()=>navigate("/cart")}/>
                 {(mobile || tablet) && 

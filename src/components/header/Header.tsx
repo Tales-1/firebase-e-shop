@@ -2,7 +2,7 @@ import { useEffect} from "react"
 import { Link } from "react-router-dom"
 import MobileNavBar from "./header-items/hamburger/MobileNavBar"
 import CartBtn from "./header-items/CartBtn"
-import logo from "./icons/newww.jpeg"
+import logo from "./icons/logo.png"
 import ProfileBtn from "./header-items/ProfileBtn"
 import SearchBar from "./header-items/SearchBar"
 import { useAppDispatch, useAppSelector } from "redux/store/hooks"
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
         <> 
             <header className="bg-blue-header flex items-center p-5 w-full z-10 shadow-md sticky top-0">
                 {mobile && <MobileNavBar />}
-                <Link to="/" className="w-24 md:28 mx-auto md:mx-0">
+                <Link to="/" className="w-24 md:w-28 lg:w-32 mx-auto md:mx-0">
                     <img  src={logo} alt="shop logo" />
                 </Link>  
 

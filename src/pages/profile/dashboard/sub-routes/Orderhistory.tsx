@@ -1,4 +1,4 @@
-import { useStyles } from "../Dashboard_PG"
+import { useStyles } from "../DashboardPG"
 
 const Orderhistory:React.FC = () => {
     const styles = useStyles()

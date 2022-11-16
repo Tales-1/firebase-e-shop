@@ -1,13 +1,7 @@
 import { useLocation, Link,  } from "react-router-dom";
 import useBreadCrumbs from "use-react-router-breadcrumbs"
 
-
-interface Route {
-    name:string
-    path:string 
-}
-
-const BreadCrumbs = ({}) => { 
+const BreadCrumbs = () => { 
     const breadcrumbs = useBreadCrumbs()
     const location = useLocation()
     const { pathname } = location

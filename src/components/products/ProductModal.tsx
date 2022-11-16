@@ -1,4 +1,4 @@
-import Button from "../misc/Button"
+import Button from "../Button"
 import { addToCart } from "redux/features/cartSlice"
 import {useAppSelector,useAppDispatch} from "redux/store/hooks"
 import {selectCurrentItem} from "redux/features/dataSlice"

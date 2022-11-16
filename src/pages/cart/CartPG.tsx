@@ -1,11 +1,11 @@
-import { useAppSelector, useAppDispatch } from "redux/store/hooks"
+import { useAppSelector } from "redux/store/hooks"
 import { selectCart, selectTotal } from "redux/features/cartSlice"
 import { selectViewport } from "redux/features/screenSlice"
 import { useNavigate } from "react-router-dom"
-import CartIsEmpty from "./CartEmpty_PG"
+import CartIsEmpty from "./CartEmptyPG"
 import MobileCheckoutBar from "components/cart/MobileCheckoutBar"
 import DisplayCartItems from "components/cart/DisplayCartItems"
-import Button from "components/misc/Button"
+import Button from "components/Button"
 import { Link } from "react-router-dom"
 import Underline from "images/PngItem_1128059.png"
 import { motion } from "framer-motion"
@@ -14,7 +14,6 @@ const Checkout:React.FC = () =>{
     const total = useAppSelector(selectTotal)
     const { mobile, tablet,  desktop } = viewport
     const cartItems = useAppSelector(selectCart)
-    const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const gridStyles = `grid-rows-[repeat(${cartItems.length},minmax(0,1fr))]`
     const variant = {
@@ -41,8 +40,8 @@ const Checkout:React.FC = () =>{
             
             {cartItems.length === 0 ? <CartIsEmpty /> :
             <div className="w-full lg:w-3/4 lg:mx-auto flex flex-col items-center bg-white">
-                <header className="w-full p-3 bg-sauvignon-cr">
-                    <button onClick={()=>navigate(-1)}>Continue to shopping</button>
+                <header className="w-full p-3">
+                    <button onClick={()=>navigate("/collection/kurtas")} >Continue to shopping</button>
                 </header>
                 <div className="mt-8 w-full grid grid-cols-3 grid-rows-2 items-center justify-center">
                     <h1 className="font-bold text-5xl font-serif mt-4 text-center col-start-2">Shopping Cart</h1>

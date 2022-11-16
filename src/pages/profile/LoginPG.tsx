@@ -1,17 +1,17 @@
 import {useState, useEffect, SetStateAction} from "react"
 import Spinner from "utils/Spinner"
-import { Link, useNavigate, useLocation } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import useNotification  from "utils/hooks/useNotification"
-import Button from "components/misc/Button"
+import Button from "components/Button"
 import useStoreUser from "utils/hooks/useStoreUser"
-import Input from "components/misc/Input"
+import Input from "components/Input"
 import { motion } from "framer-motion"
 const Login:React.FC = () =>{
     const [email, setEmail] = useState("")
     const [password,setPassword] = useState("")
-    const [user, loading, error] = useAuthState(auth)
+    const [user, loading ] = useAuthState(auth)
     const notification = useNotification("Successfully Logged In!")
     const navigate = useNavigate()
     const {executeDispatch} = useStoreUser({name:user?.displayName, email:user?.email})

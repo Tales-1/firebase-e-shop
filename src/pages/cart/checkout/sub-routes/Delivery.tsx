@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-
+import Button from "components/Button"
 
 const Delivery:React.FC = () => {
     const navigate = useNavigate()
@@ -32,7 +32,10 @@ const Delivery:React.FC = () => {
                     <span className="w-1/5">£5.00</span>
                 </div>
             </article>
-            <button onClick={()=>navigate("/checkout/payment")}>CONTINUE TO PAYMENT</button>
+            <Button func={()=>navigate("/checkout/payment")}
+                    styles="bg-blue-header text-white p-3 font-bold">
+                CONTINUE TO PAYMENT
+            </Button>
             <p onClick={()=>navigate(-1)}>return to information</p>
         </div>
 

@@ -1,4 +1,4 @@
-import { useStyles } from "../Dashboard_PG"
+import { useStyles } from "../DashboardPG"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../../firebase";
 import { useEffect, useState } from "react";

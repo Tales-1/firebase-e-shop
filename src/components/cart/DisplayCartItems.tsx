@@ -1,6 +1,6 @@
 import { decrement, removeFromCart, selectCart,increment } from "redux/features/cartSlice"
 import { useAppDispatch, useAppSelector } from "redux/store/hooks"
-import Button from "../misc/Button"
+import Button from "../Button"
 import Plus from "images/expand-plus-icon.png"
 import Minus from "images/collapse-minus-icon.png"
 import TrashIcon from "images/trash-bin-icon.png"
@@ -12,6 +12,7 @@ type Props = {
 const DisplayCartItems:React.FC<Props> = ({location}) => {
     const cartItems = useAppSelector(selectCart)
     const dispatch = useAppDispatch()
+    
     const displayItems = cartItems.map((item,i) => {
         if(location === "SLIDING_MENU"){
             return (

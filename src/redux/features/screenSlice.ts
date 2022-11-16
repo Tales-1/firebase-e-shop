@@ -79,7 +79,6 @@ export const screenSlice = createSlice({
             } else if (action.payload === "UNLOADED"){
                 state.loading =  true
             } if(action.payload === "HIDE"){
-                console.log("hiding")
                 state.hidden = true
             }
         }

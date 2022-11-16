@@ -5,8 +5,8 @@ import { useState, useEffect } from "react"
 // Property 'mobile' does not exist on type '{ mobile?: boolean | undefined; tablet?: boolean | undefined; desktop?: boolean | undefined; } | undefined'.ts(2339)
 
 import { Link } from "react-router-dom"
-import Button from "components/misc/Button"
-import Welcome from "pages/Welcome_PG";
+import Button from "components/Button"
+import Welcome from "pages/WelcomePG";
 
 const Hero:React.FC = () => {
     let duration = .6

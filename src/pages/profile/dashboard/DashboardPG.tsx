@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { auth, db, logout } from "../../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-import Button from "components/misc/Button";
+import Button from "components/Button";
 import { Outlet } from "react-router-dom";
 import useNotification from "utils/hooks/useNotification";
 import DashboardMenu from "./DashboardMenu";
@@ -14,7 +14,7 @@ import { useAppDispatch } from "redux/store/hooks"
 type ContextType = string
 
 const Dashboard:React.FC = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading ] = useAuthState(auth);
     const [name, setName] = useState("");
     const styles = "col-start-1 col-span-3 row-start-3 lg:col-start-2 lg:col-span-2 lg:row-start-2 lg:row-span-2"
     const navigate = useNavigate();

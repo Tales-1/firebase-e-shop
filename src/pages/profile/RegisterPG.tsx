@@ -1,8 +1,8 @@
 import {useState, useEffect} from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { Link, useNavigate } from "react-router-dom"
-import Button from "components/misc/Button";
-import Input from "components/misc/Input";
+import Button from "components/Button";
+import Input from "components/Input";
 import {
     auth,
     registerWithEmailAndPassword,
@@ -13,9 +13,8 @@ const Register:React.FC = () => {
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [name,setName] = useState("")
-    const [user, loading,error] = useAuthState(auth)
+    const [user, loading ] = useAuthState(auth)
     const navigate = useNavigate()
-    const inputStyles = "border-2 border-black p-2 rounded-md"
     const register = () => {
         registerWithEmailAndPassword(name,email,password)
     }

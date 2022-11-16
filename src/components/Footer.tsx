@@ -1,5 +1,3 @@
-
-
 const Footer:React.FC = () => {
 
     return ( 
@@ -26,7 +24,13 @@ const Footer:React.FC = () => {
             </div>
            
             <div className="w-full bg-sauvignon-cr text-black p-2 mt-8 font-bold">
-                <p className="mx-auto w-3/5 text-center">2022 All Rights Reserved Mibby Fashions</p>
+                <p className="mx-auto w-3/5 text-center">
+                    <span className="mr-2">
+                         &#169;
+                    </span>
+                     2022 All Rights Reserved Mibby Fashions&#8482;
+    
+                </p>
             </div>
         </footer>
     )

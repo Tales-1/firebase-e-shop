@@ -1,4 +1,4 @@
-import Button from "../misc/Button"
+import Button from "../Button"
 import { Link } from "react-router-dom"
 
 type Props = {

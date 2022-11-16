@@ -9,32 +9,33 @@ const SortProducts:React.FC = () => {
     const desktopVW = innerWidth > 1200 
     return (
         desktopVW ? 
-        <aside className="w-1/5 sticky top-[30%] mx-auto h-fit">
-            <ul className="grid gap-6 text-blue-header tracking-wide py-4 border-2 border-black">
-                <li className="pl-4 text-xl font-bold border-b-2 border-black pb-2">
-                    Sort:
-                </li>
-                <li className="pl-4 flex font-semibold">
+        <aside className="w-1/2 bg-blue-header mx-auto h-fit">
+            <ul className="flex gap-6 text-white tracking-wide border-2 border-black">
+                <li className="flex font-semibold w-full text-center">
                     <input type="radio" name="filter" id="l-h" className="hidden peer" />
-                    <label htmlFor="l-h" className="cursor-pointer block w-full peer-checked:text-blue-header peer-checked:font-bold peer-checked:text-xl" onClick={()=>dispatch(sortItems("LOW_TO_HIGH"))}>
+                    <label htmlFor="l-h" 
+                    className="cursor-pointer block w-full py-4 peer-checked:bg-white peer-checked:text-black peer-checked:font-bold" onClick={()=>dispatch(sortItems("LOW_TO_HIGH"))}>
                         Low to High
                     </label>
                 </li>
-                <li className="pl-4 font-semibold">
+                <li className="pl-4 font-semibold w-full text-center">
                     <input type="radio" name="filter" id="h-l" className="hidden peer" />
-                    <label htmlFor="h-l" className="cursor-pointer block w-full peer-checked:text-blue-header peer-checked:font-bold peer-checked:text-xl" onClick={()=>dispatch(sortItems("HIGH_TO_LOW"))}>
+                    <label htmlFor="h-l" 
+                    className="cursor-pointer block w-full py-4 peer-checked:bg-white peer-checked:text-black peer-checked:font-bold" onClick={()=>dispatch(sortItems("HIGH_TO_LOW"))}>
                         High to Low
                     </label>
                 </li>
-                <li className="pl-4 font-semibold">
+                <li className="pl-4 font-semibold w-full text-center">
                     <input type="radio" name="filter" id="a-z" className="hidden peer" />
-                    <label htmlFor="a-z" className="cursor-pointer block w-full peer-checked:text-blue-header peer-checked:font-bold peer-checked:text-xl" onClick={()=>dispatch(sortItems("A_TO_Z"))}>
+                    <label htmlFor="a-z" 
+                    className="cursor-pointer block w-full py-4 peer-checked:bg-white peer-checked:text-black peer-checked:font-bold" onClick={()=>dispatch(sortItems("A_TO_Z"))}>
                         Alphabetically A-Z
                     </label>
                 </li>
-                <li className="pl-4 font-semibold">
+                <li className="pl-4 font-semibold w-full text-center">
                     <input type="radio" name="filter" id="z-a" className="hidden peer"/>
-                    <label htmlFor="z-a"  className="cursor-pointer block w-full peer-checked:text-blue-header peer-checked:font-bold peer-checked:text-xl" onClick={()=>dispatch(sortItems("Z_TO_A"))}>
+                    <label htmlFor="z-a"  
+                    className="cursor-pointer block w-full py-4 peer-checked:bg-white peer-checked:text-black peer-checked:font-bold" onClick={()=>dispatch(sortItems("Z_TO_A"))}>
                         Alphabetically Z-A
                     </label>
                 </li>
