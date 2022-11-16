@@ -1,12 +1,11 @@
 import heroImg from "images/hero-img.jpg"
 import {motion} from "framer-motion"
-import { useState, useEffect } from "react"
 // FIND A SOLUTION TO THE MOBILE KEY PAIRING NOT BEING READ OR UNDERSTOOD BY TYPESCRIPT AT THE MOMENT I'VE PUT DOWN ANY
 // Property 'mobile' does not exist on type '{ mobile?: boolean | undefined; tablet?: boolean | undefined; desktop?: boolean | undefined; } | undefined'.ts(2339)
 
 import { Link } from "react-router-dom"
 import Button from "components/Button"
-import Welcome from "pages/WelcomePG";
+
 
 const Hero:React.FC = () => {
     let duration = .6

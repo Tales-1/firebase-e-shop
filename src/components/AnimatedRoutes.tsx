@@ -1,17 +1,17 @@
 import { Route,Routes,Navigate, useLocation } from "react-router-dom"
 
 //PARENT ROUTES
-import ParentRoute from "pages/ParentRoute";
-import Protected from "pages/ProtectedPG";
-import ProductList_PG from "pages/ProductListPG";
-import Checkout_PG from "pages/cart/checkout/Checkout_PG";
-import Product_PG from "pages/ProductPG";
-import Login_PG from "pages/profile/LoginPG";
-import Cart_PG from "pages/cart/Cart_PG";
-import Register_PG from "pages/profile/RegisterPG";
-import Reset_PG from "pages/profile/ResetPG"
-import Contact_PG from "pages/ContactPG";
-import Dashboard_PG from "pages/profile/dashboard/DashboardPG";
+import ParentRoute from "pages/ParentRoute"
+import Protected from "pages/ProtectedPg"
+import ProductListPg from "pages/ProductListPg"
+import CheckoutPg from "pages/cart/checkout/CheckoutPg"
+import ProductPg from "pages/ProductPg"
+import LoginPg from "pages/profile/LoginPg"
+import CartPg from "pages/cart/CartPg"
+import RegisterPg from "pages/profile/RegisterPg"
+import ResetPg from "pages/profile/ResetPg"
+import ContactPg from "pages/ContactPg"
+import DashboardPg from "pages/profile/dashboard/DashboardPg";
 
 // SUB-ROUTE COMPONENTS
 import Orderhistory from "pages/profile/dashboard/sub-routes/Orderhistory";
@@ -33,26 +33,26 @@ const AnimatedRoutes:React.FC<Props> = ({isLoggedIn}) => {
             <Routes location={location} key={location.pathname}>
                 <Route path ="/" element={<ParentRoute />}>
                   <Route path="collection/:name">
-                      <Route index element={<ProductList_PG />} />
-                      <Route path=":type" element={<Product_PG />} />
+                      <Route index element={<ProductListPg />} />
+                      <Route path=":type" element={<ProductPg />} />
                   </Route>
-                  <Route path="contact-us" element={<Contact_PG />} />
-                  <Route path="cart" element={<Cart_PG />} />
+                  <Route path="contact-us" element={<ContactPg />} />
+                  <Route path="cart" element={<CartPg />} />
                   <Route path="profile/dashboard" element={
                         <Protected accessGranted={isLoggedIn}>
-                          <Dashboard_PG />
+                          <DashboardPg />
                         </Protected>}>
                         <Route path="order-history" element={<Orderhistory />}/>
                         <Route path="wishlist" element={<Wishlist />}/>
                         <Route path="account-details" element={<AccountDetails />}/>
                   </Route>
 
-                  <Route path ="login" element={<Login_PG />} />
-                  <Route path ="register" element={<Register_PG />} />
-                  <Route path ="reset" element={<Reset_PG />} />
+                  <Route path ="login" element={<LoginPg />} />
+                  <Route path ="register" element={<RegisterPg />} />
+                  <Route path ="reset" element={<ResetPg />} />
                 </Route>
                 
-                <Route path="/checkout" element={<Checkout_PG />}>
+                <Route path="/checkout" element={<CheckoutPg />}>
                   <Route path="information" element={<Information />} />
                   <Route path="delivery" element={<Delivery />}/>
                   <Route path="payment" element={<Payment />}/>

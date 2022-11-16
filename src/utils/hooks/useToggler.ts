@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../redux/store/hooks";
 import { selectHamburgerVisible, toggleHamburger, selectViewport } from "../../redux/features/screenSlice";
-import React, { ReactElement } from "react";
 
 
 // WHAT TYPE DO I GIVE TO THIS HOOK?
@@ -14,7 +13,6 @@ const useToggler = () => {
             dispatch(toggleHamburger(defaultValue))
         }
     }
-    
     return {toggleMenu, isVisible}
 }
 

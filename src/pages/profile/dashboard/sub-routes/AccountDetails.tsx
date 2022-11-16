@@ -1,4 +1,4 @@
-import { useStyles } from "../DashboardPG"
+import { useStyles } from "../DashboardPg"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../../firebase";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ type UserDetails = {
     loading:boolean
 }
 const AccounDetails:React.FC = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const [userDetails,setUserDetails] = useState<UserDetails>({
         name:"none",
         email:"none",

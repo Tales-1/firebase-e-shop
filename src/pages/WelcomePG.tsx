@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useLayoutEffect } from "react"
 import { useAppDispatch, useAppSelector } from "redux/store/hooks"
 import { selectHidden } from "redux/features/screenSlice"
-import { selectLoading, setLoaded } from "redux/features/screenSlice";
+import { setLoaded } from "redux/features/screenSlice";
 
 
 type Props = {

@@ -24,7 +24,7 @@ const DashboardMenu:React.FC<Props> = ({styles}) => {
             </Link>
             <Link to={`/${path[1]}/${path[2]}/account-details`} className="w-full">
                 <article className="flex flex-col gap-4 justify-center items-center text-center">
-                   <img src={require("./svg-icons/profile-girl-icon.svg").default} alt={"Icon of Profile image"} className="w-2/5 max-w-[3rem]"/>
+                   <img src={require("./svg-icons/profile-girl-icon.svg").default} alt={"Icon of Profile"} className="w-2/5 max-w-[3rem]"/>
                     <span className="font-sans-serif font-bold text-sm">Account Details</span>
                 </article>
             </Link>

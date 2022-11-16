@@ -1,8 +1,7 @@
-import kurtaOne from "images/Kurta-1.jpeg"
 import kurtaThree from "images/Kurta-3.jpeg"
 import CatalogueCard from "../CatalogueCard"
-import { motion, useScroll } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
+
 
 const Catalogue:React.FC = () =>{
     
@@ -26,21 +25,19 @@ const Catalogue:React.FC = () =>{
                             url="/collection/kurtas" 
                             src="https://res.cloudinary.com/db1m4tnkn/image/upload/v1667087752/e-shop-images/Kurta-11-1_flabev.jpg" 
                             name="Kurtas"
-                            style=""
                             cardNo={1}
                             />
                             <CatalogueCard 
                                 url="/collection/dresses" 
                                 src="https://res.cloudinary.com/db1m4tnkn/image/upload/v1667087753/e-shop-images/dress-5_isiknk.jpg" 
                                 name="Dresses" 
-                                style=""
+                                
                                 cardNo={2}
                                 />
                             <CatalogueCard 
                                 url="/collection/casual" 
                                 src={kurtaThree} 
                                 name="Casual" 
-                                style=""
                                 cardNo={3}
                                 />
                             </div>

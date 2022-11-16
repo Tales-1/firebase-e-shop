@@ -18,7 +18,7 @@ const Checkout:React.FC = () => {
        return ( 
        <li className="flex gap-2 text-sm" key={i}>
            <div className="w-[6rem] aspect-square bg-white border-[1px] border-gray grid">
-                <img src={item.url?.[0]} alt="product image" className="w-9/12 aspect-square object-cover m-auto" />
+                <img src={item.url?.[0]} alt="product" className="w-9/12 aspect-square object-cover m-auto" />
             </div>
            <p className="w-1/2">{item.name}<i className="block mt-2">Qty. {item.qty}</i></p>
            <span className="1/4 ml-auto">{item.price}</span>

@@ -1,4 +1,4 @@
-import { useStyles } from "../DashboardPG"
+import { useStyles } from "../DashboardPg"
 
 const Wishlist:React.FC = () => {
     const styles = useStyles()
