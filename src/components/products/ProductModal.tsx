@@ -4,6 +4,8 @@ import {useAppSelector,useAppDispatch} from "redux/store/hooks"
 import {selectCurrentItem} from "redux/features/dataSlice"
 import {useState} from "react"
 
+// COME BACK TO LOOK AT THIS COMPONENT AT A LATER DATE
+
 type Props = {
     item:{name:string | undefined, price:number | undefined, urls:string[] | undefined}
 }
