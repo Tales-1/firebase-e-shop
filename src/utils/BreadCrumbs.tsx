@@ -13,7 +13,7 @@ const BreadCrumbs = ({}) => {
     const { pathname } = location
     
     return(
-        <nav className="w-full p-4 bg-sauvignon-cr flex justify-center gap-4">
+        <nav className="w-full p-4 bg-white flex justify-center gap-4">
                 {breadcrumbs.map(({ match,breadcrumb }, i) => {
                     if(i === 1) return null
                     else{
