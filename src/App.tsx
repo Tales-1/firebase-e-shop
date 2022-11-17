@@ -15,7 +15,6 @@ const App: React.FC = () => {
   const {status, fetch, dispatch, products} = useFetcher()
   const {isLoggedIn} = useStoreUser()
   const isVisible = useAppSelector(selectLoading)
-  console.log("app:",{isVisible, products})
 
   useEffect(()=>{
     if(status === "idle"){
