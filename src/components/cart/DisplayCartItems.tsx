@@ -17,18 +17,18 @@ const DisplayCartItems:React.FC<Props> = ({location}) => {
         if(location === "SLIDING_MENU"){
             return (
                 <li className="grid grid-rows-3 grid-cols-4 text-base gap-3" key={i}>
-                <img src={item!.url![0]} alt="cart item"  className="object-cover row-start-1 row-span-3 h-full"/>
-                <h4 className="col-start-2 col-span-2">{item.name}</h4>
-                <span className="row-start-2 col-start-2">{item.price}</span>
-                <div className="flex col-start-3 row-start-2 gap-1 h-fit">
-                    <Button styles="w-6" func={()=>dispatch(decrement(item))}><img src={Minus} alt="minus button" /></Button>
-                    <span className="grid items-center underline underline-offset-4 w-1/2 text-center">{item.qty}</span>
-                    <Button styles="w-6" func={()=>dispatch(increment(item))}><img src={Plus} alt="plus button" /></Button>
-                </div>
-                <Button styles="row-start-3 col-start-4 place-self-end font-bold text-red hover:animate-bounce" func={(()=>dispatch(removeFromCart(item)))}>
-                        <img className="w-4 md:w-6" src={TrashIcon} alt="Trash Icon" />
-                </Button>
-            </li>
+                    <img src={item!.url![0]} alt="cart item"  className="object-cover row-start-1 row-span-3 h-full"/>
+                    <h4 className="col-start-2 col-span-2">{item.name}</h4>
+                    <span className="row-start-2 col-start-2">{item.price}</span>
+                    <div className="flex col-start-3 row-start-2 gap-1 h-fit">
+                        <Button styles="w-6" func={()=>dispatch(decrement(item))}><img src={Minus} alt="minus button" /></Button>
+                        <span className="grid items-center underline underline-offset-4 w-1/2 text-center">{item.qty}</span>
+                        <Button styles="w-6" func={()=>dispatch(increment(item))}><img src={Plus} alt="plus button" /></Button>
+                    </div>
+                    <Button styles="row-start-3 col-start-4 place-self-end font-bold text-red hover:animate-bounce" func={(()=>dispatch(removeFromCart(item)))}>
+                            <img className="w-4 md:w-6" src={TrashIcon} alt="Trash Icon" />
+                    </Button>
+                </li>
             )
         } else if(location === "CART") { 
             return (

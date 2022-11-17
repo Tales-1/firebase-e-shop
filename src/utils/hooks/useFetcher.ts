@@ -9,7 +9,7 @@ const useFetcher = () => {
         dispatch(fetchData())
     }
     
-    return {status, fetch,dispatch, products}
+    return {status, fetch, dispatch, products}
 } 
 
 export default useFetcher
