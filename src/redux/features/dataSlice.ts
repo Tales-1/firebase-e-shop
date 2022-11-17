@@ -68,7 +68,7 @@ export const dataSlice = createSlice({
            })
         },
         findCurrent:(state,action) => { 
-            let arr = state.filtered.filter((item) => {
+            let arr = state.products.filter((item) => {
                 return item.id === action.payload
             })
             state.currentItem = arr[0]
