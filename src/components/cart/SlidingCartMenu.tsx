@@ -28,12 +28,11 @@ const SlidingCartMenu:React.FC = () => {
                 <span className="font-bold col-start-3 justify-self-end">£{total}</span>
                 
                 <Button 
-                    styles="bg-red text-white p-2 font-extrabold tracking-widest col-span-3 text-2xl"
+                    styles="bg-blue-card text-white p-2 font-extrabold tracking-widest col-span-3 text-2xl"
                     func={()=>{
                         dispatch(hideCart())
                         navigate("/cart")
-                    }}
-                        >
+                    }}>
                     View Bag
                 </Button>
             </footer> : <h1>Cart is Empty</h1>}
