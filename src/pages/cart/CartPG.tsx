@@ -41,9 +41,10 @@ const Checkout:React.FC = () =>{
                 <header className="w-full p-3">
                     <button onClick={()=>navigate("/collection/kurtas")} >Continue to shopping</button>
                 </header>
+
                 <div className="mt-8 w-full grid grid-cols-3 grid-rows-2 items-center justify-center">
-                    <h1 className="font-bold text-5xl font-serif mt-4 text-center col-start-2">Shopping Cart</h1>
-                    <img src={Underline} alt="underline" className="w-2/5 min-w-[10rem] max-w-[20rem] row-start-2 col-start-1 col-span-3 mx-auto"/>
+                    <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-serif mt-4 text-center col-start-1 col-span-3">Shopping Cart</h1>
+                    <img src={Underline} alt="underline" className="w-1/5 min-w-[13rem] max-w-[18rem] row-start-2 col-start-1 col-span-3 mx-auto"/>
                 </div>
                 
                 <main className="flex justify-center w-11/12 lg:justify-between lg:w-10/12 gap-5 h-full my-16">
