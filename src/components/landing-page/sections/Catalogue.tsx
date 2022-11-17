@@ -1,11 +1,13 @@
 import CatalogueCard from "../CatalogueCard"
 import { motion } from "framer-motion"
-import { useAppSelector } from "redux/store/hooks"
+import { useAppDispatch, useAppSelector } from "redux/store/hooks"
 import { selectProducts } from "redux/features/dataSlice"
+import { findCurrent } from "redux/features/dataSlice"
+import { Link } from "react-router-dom"
 
 const Catalogue:React.FC = () =>{
     const products = useAppSelector(selectProducts)
-    
+    const dispatch = useAppDispatch()
     return(
         <section id="section-one" className="flex flex-col" >
             <motion.div 
@@ -80,13 +82,21 @@ const Catalogue:React.FC = () =>{
                                 {products.map((item,i) => {
                                     if(i < 11){
                                         return(
-                                            <li className="flex flex-col items-center w-full min-h-[9rem] min-w-[13rem] lg:min-w-[18rem] row-start-2 aspect-[1/1.5]" key={i}>
-                                                <div className="h-full w-full flex flex-col items-center">
-                                                    <img src={item.url![0]} alt="clothing" className="object-cover w-full h-full max-h-card " />
-                                                    <p className="font-serif text-lg text-center">{item.name}</p>
-                                                    <span className="text-xs">£{item.price}</span>
-                                                </div>
-                                            </li>
+                                            
+                                                <li className="flex flex-col items-center w-full min-h-[9rem] 
+                                                            min-w-[13rem] lg:min-w-[18rem] row-start-2 aspect-[1/1.5]
+                                                            cursor-pointer
+                                                            " 
+                                                    key={i}>
+                                                    <Link to={`/collection/${item.type}/${item.name?.split(" ").join("-")}`}
+                                                          className="h-full w-full flex flex-col items-center"
+                                                          onClick={()=>dispatch(findCurrent(item.id))}
+                                                          >
+                                                            <img src={item.url![0]} alt="clothing" className="object-cover w-full h-full max-h-card " />
+                                                            <p className="font-serif text-lg text-center">{item.name}</p>
+                                                            <span className="text-xs">£{item.price}</span>
+                                                    </Link>
+                                                </li>
                                         )
                                     }
                                 })}
