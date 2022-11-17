@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useAppSelector } from "redux/store/hooks"
-import { selectOverlay, selectViewport } from "redux/features/screenSlice"
+import { selectOverlay } from "redux/features/screenSlice"
 import { motion } from "framer-motion"
 
 type CardProps = {
@@ -24,7 +24,11 @@ const CatalogueCard:React.FC<CardProps> = ({url,src,style,name, cardNo}) => {
                     <Link to={url}>
                         <div className="relative bg-blue-header flex flex-col items-center transition-all duration-300 hover:scale-105">
                             <div className={`relative w-full ml-auto ${overlayStyles} before:bg-black `}>
-                                <img src={src} alt="clothes" className={`aspect-square lg-2:aspect-[1.4/1] object-cover w-full`}/>
+                                <img 
+                                    src={src} 
+                                    alt="clothes"
+                                    className={`aspect-square lg-2:aspect-[1.4/1] object-cover w-full`}
+                                />
                             </div>
                             <div className="flex flex-col absolute justify-center items-center h-full w-full">
 

@@ -16,9 +16,9 @@ const App: React.FC = () => {
   const {isLoggedIn} = useStoreUser()
   const isVisible = useAppSelector(selectLoading)
   console.log("app:",{isVisible, products})
+
   useEffect(()=>{
     if(status === "idle"){
-      console.log("hello")
         fetch()
     }
     else if (status === "loading") return 
@@ -33,10 +33,10 @@ const App: React.FC = () => {
       <Welcome isVisible={isVisible}/>
       <Notification />
       <ScreenOverlay />
-        <Router>
-          <ScrollToTop />
-          <AnimatedRoutes isLoggedIn={isLoggedIn} />
-        </Router>
+      <Router>
+        <ScrollToTop />
+        <AnimatedRoutes isLoggedIn={isLoggedIn} />
+      </Router>
       
     </div>
   );

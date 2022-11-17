@@ -1,12 +1,16 @@
 import Hero from "components/landing-page/sections/Hero"
-import Catalogue from "components/landing-page/sections/Catalogue"
+import { lazy, Suspense } from "react"
+import Spinner from "components/Spinner"
+const LazyCatalogue = lazy(() => import("components/landing-page/sections/Catalogue"))
 
 const LandingPage:React.FC = () => {
 
     return (
         <>
+        <Suspense fallback={<Spinner />}>
           <Hero />
-          <Catalogue />
+          <LazyCatalogue />
+        </Suspense>
         </>
     )
 }

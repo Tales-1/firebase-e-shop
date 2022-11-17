@@ -13,7 +13,7 @@ type Props = {
 const Welcome:React.FC<Props> = ({isVisible}) => { 
     const dispatch = useAppDispatch()
     const isHidden = useAppSelector(selectHidden)
-    console.log("welcome", {isHidden})
+    
     const sentence = {
         hidden:{opacity:1},
         visible:{
