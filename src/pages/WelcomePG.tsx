@@ -44,7 +44,6 @@ const Welcome:React.FC<Props> = ({isVisible}) => {
     // DISPLAY WELCOME COMPONENT ONLY IF PAGE IS BEING OPENED FOR THE FIRST TIME
       useEffect(()=>{
         let session = sessionStorage.getItem("session")
-        console.log("before onload")
           setTimeout(()=>{
             if(session !=="TRUE"){
               dispatch(setLoaded("LOADED"))
