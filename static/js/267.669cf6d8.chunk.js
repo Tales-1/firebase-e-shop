@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfirebase_test=self.webpackChunkfirebase_test||[]).push([[267],{6267:function(e,t,s){s.r(t);var a=s(3329);t.default=function(){return(0,a.jsxs)("div",{className:"w-10/12 flex flex-col mx-auto h-[40vh]",children:[(0,a.jsx)("h1",{className:"text-center mt-16 text-3xl md:text-5xl font-serif font-bold",children:"Get in Touch..."}),(0,a.jsx)("p",{className:"text-center mt-12",children:"For any queries please e-mail us: Mibby@mibbyfashions.com"})]})}}}]);
+//# sourceMappingURL=267.669cf6d8.chunk.js.map

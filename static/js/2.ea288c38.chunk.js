@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfirebase_test=self.webpackChunkfirebase_test||[]).push([[2],{3002:function(e,r,s){s.r(r);var t=s(7689),n=s(3329);r.default=function(e){var r=e.children;return e.accessGranted?(0,n.jsx)(n.Fragment,{children:r}):(0,n.jsx)(t.Fg,{to:"/login",replace:!0})}}}]);
+//# sourceMappingURL=2.ea288c38.chunk.js.map
