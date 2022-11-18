@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from "react-router-dom"
+import { HashRouter as Router } from "react-router-dom"
 import React, { useEffect } from "react"
 import AnimatedRoutes from "components/AnimatedRoutes";
 // UTLS & MISC
