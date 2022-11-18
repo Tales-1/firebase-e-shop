@@ -31,72 +31,44 @@ const AnimatedRoutes:React.FC<Props> = ({isLoggedIn}) => {
     const location = useLocation()
     
     return (
-            <Routes location={location} key={location.pathname}>
-                <Route path ="/" element={<ParentRoute />}>
-                  <Route path="collection/:name">
-                      <Route index 
-                           element={<Suspense fallback={<Spinner />}>
-                                  <LazyProductListPg />
-                              </Suspense>} 
-                      />
-                      <Route path=":type" element={<ProductPg />} />
+            <Suspense fallback={<Spinner />}>
+              <Routes location={location} key={location.pathname}>
+                  <Route path ="/" element={<ParentRoute />}>
+                    <Route path="collection/:name">
+                        <Route index element={<LazyProductListPg />} />
+                        <Route path=":type" element={<ProductPg />} />
+                    </Route>
+
+                    <Route path="contact-us" element={<LazyContactPg />}/>
+
+                    <Route path="cart" element={<LazyCartPg />} />
+
+                    <Route path="profile/dashboard" element={
+                          <LazyProtectedPg accessGranted={isLoggedIn}>
+                            <LazyDashboardPg />
+                          </LazyProtectedPg>}
+                    >
+
+                          <Route path="order-history" element={<Orderhistory />}/>
+                          <Route path="wishlist" element={<Wishlist />}/>
+                          <Route path="account-details" element={<AccountDetails />}/>
+                    </Route>
+
+                    <Route path ="login" element={<LoginPg />} />
+                    <Route path ="register" element={<RegisterPg />} />
+                    <Route path ="reset" element={<ResetPg />} />
                   </Route>
-
-                  <Route path="contact-us" 
-                        element={ <Suspense fallback={<Spinner />}>
-                              <LazyContactPg />
-                            </Suspense>
-                  }/>
-
-                  <Route path="cart" 
-                        element={<Suspense fallback={<Spinner />}>
-                                    <LazyCartPg />
-                                  </Suspense>
-                        } />
-
-                  <Route path="profile/dashboard" element={
-                    <Suspense fallback={<Spinner />}>
-                        <LazyProtectedPg accessGranted={isLoggedIn}>
-                          <LazyDashboardPg />
-                        </LazyProtectedPg>
-                    </Suspense>}>
-
-                        <Route path="order-history" element={<Orderhistory />}/>
-                        <Route path="wishlist" element={<Wishlist />}/>
-                        <Route path="account-details" element={<AccountDetails />}/>
+                    
+                  <Route path="/checkout" element={<LazyCheckoutPg />} >
+                    <Route path="information" element={<LazyInformation />} />
+                    <Route path="delivery" element={<LazyDelivery />}/>
+                    <Route path="payment" element={<LazyPayment />}/>
+                    <Route path="review" element={<LazyReview />} />
                   </Route>
-
-                  <Route path ="login" element={<LoginPg />} />
-                  <Route path ="register" element={<RegisterPg />} />
-                  <Route path ="reset" element={<ResetPg />} />
-                </Route>
-                
-                <Route path="/checkout" 
-                        element={ <Suspense fallback={<Spinner />}>
-                                      <LazyCheckoutPg />
-                                  </Suspense>
-                                  }>
-                  <Route path="information" element={
-                      <Suspense fallback={<Spinner />}>
-                        <LazyInformation />
-                      </Suspense>} />
-                  <Route path="delivery" element={
-                      <Suspense fallback={<Spinner />}>
-                        <LazyDelivery />
-                      </Suspense>}/>
-                  <Route path="payment" element={
-                      <Suspense fallback={<Spinner />}>
-                        <LazyPayment />
-                      </Suspense>}/>
-                  <Route path="review" element={
-                      <Suspense fallback={<Spinner />}>
-                        <LazyReview />
-                      </Suspense>}/>
-                </Route>
-                
-                <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-        
+                    
+                  <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </Suspense>
     )
 }
 export default AnimatedRoutes
