@@ -1,5 +1,6 @@
 {
   "name": "firebase-test",
+  "homepage": "http://tales-1.github.io/firebase-e-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
