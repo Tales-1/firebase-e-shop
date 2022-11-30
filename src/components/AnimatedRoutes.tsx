@@ -46,9 +46,7 @@ const AnimatedRoutes:React.FC<Props> = ({isLoggedIn}) => {
                     <Route path="profile/dashboard" element={
                           <LazyProtectedPg accessGranted={isLoggedIn}>
                             <LazyDashboardPg />
-                          </LazyProtectedPg>}
-                    >
-
+                          </LazyProtectedPg>}>
                           <Route path="order-history" element={<Orderhistory />}/>
                           <Route path="wishlist" element={<Wishlist />}/>
                           <Route path="account-details" element={<AccountDetails />}/>

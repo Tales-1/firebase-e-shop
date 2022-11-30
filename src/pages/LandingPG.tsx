@@ -7,10 +7,10 @@ const LandingPage:React.FC = () => {
 
     return (
         <>
-        <Suspense fallback={<Spinner />}>
-          <Hero />
-          <LazyCatalogue />
-        </Suspense>
+          <Suspense fallback={<Spinner />}>
+            <Hero />
+            <LazyCatalogue />
+          </Suspense>
         </>
     )
 }
