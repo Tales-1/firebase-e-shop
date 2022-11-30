@@ -1,4 +1,4 @@
-# E-Shop App
+# Dummy E-Shop App
 
 The aim of this CRA is to make a multipage fake virtual store to put my learning to use. Having just learnt React and the fundamentals I see this as a great
 opportunity test my comprehension of the React ecosystem.
