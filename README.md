@@ -1,6 +1,6 @@
 # Dummy E-Shop App
 
-The aim of this CRA is to make a multipage fake virtual store to put my learning to use. Having just learnt React and the fundamentals I see this as a great
+The aim of this CRA is to make a fake virtual store to put my learning to use. Having just learnt React and the fundamentals I see this as a great
 opportunity test my comprehension of the React ecosystem.
 
 I will also be learning & applying tailwindcss and Typescript.js for the first time.
@@ -39,10 +39,11 @@ Order history recorded and stored in firebase storage upon "purchase"
 ## Improvements to make:
 
 - Store images in firestore
-- Add lazy loading to improve performance
+- ~~Add lazy loading to improve performance~~ - complete
 - Add another section to the landing page
 - Add favourite function to product items
-- Store fake orderhistory and favourited items in firebase database
+- Store fake order history and favourited items in firebase database
+- Display order history and favourited items for users with accounts
 
 ## EDIT
 ** Though it isn't a live e-commerce shop, it is quite possible in the near future that this app ships to production. For that matter, during the building 
