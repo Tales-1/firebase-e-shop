@@ -1,5 +1,7 @@
 # Dummy E-Shop App
 
+![Mibbyfashions](https://user-images.githubusercontent.com/84051594/204839097-23b2dc51-ff27-4f8c-84c7-5f7858573661.png)
+
 The aim of this CRA is to make a fake virtual store to put my learning to use. Having just learnt React and the fundamentals I see this as a great
 opportunity test my comprehension of the React ecosystem.
 
