@@ -11,7 +11,7 @@ const Catalogue:React.FC = () =>{
     return(
         <section id="section-one" className="flex flex-col" >
             <motion.div 
-                className="grid grid-rows-[10% auto 50%] gap-12 mx-auto h-full will-change-transform"
+                className="grid grid-rows-[10% auto 50%] gap-12 mx-auto will-change-transform"
                 initial={{opacity:0}}
                 whileInView={{opacity:1, transition:{duration:.5}}}
                 viewport={{once:true,amount:0.25}}>
