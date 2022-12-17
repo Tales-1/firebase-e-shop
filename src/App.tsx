@@ -1,5 +1,5 @@
-import { HashRouter as Router } from "react-router-dom"
-import React, { useEffect } from "react"
+import { HashRouter as Router } from "react-router-dom";
+import React, { useEffect } from "react";
 import AnimatedRoutes from "components/AnimatedRoutes";
 // UTLS & MISC
 import Notification from "./components/Notification";
@@ -12,33 +12,30 @@ import { useAppSelector } from "redux/store/hooks";
 import ScrollToTop from "utils/ScrollToTop";
 
 const App: React.FC = () => {
-  const {status, fetch, dispatch, products} = useFetcher()
-  const {isLoggedIn} = useStoreUser()
-  const isVisible = useAppSelector(selectLoading)
+  const { status, fetch, dispatch, products } = useFetcher();
+  const { isLoggedIn } = useStoreUser();
+  const isVisible = useAppSelector(selectLoading);
 
-  useEffect(()=>{
-    if(status === "idle"){
-        fetch()
+  useEffect(() => {
+    if (status === "idle") {
+      fetch();
+    } else if (status === "loading") return;
+    else if (status === "rejected") {
+      return alert("Error fetching data");
     }
-    else if (status === "loading") return 
-    else if (status === "rejected"){
-      return alert("Error fetching data")
-    }
-  },[status,dispatch])
-  
+  }, [status, dispatch]);
 
   return (
     <div className="relative flex flex-col">
-      <Welcome isVisible={isVisible}/>
+      <Welcome isVisible={isVisible} />
       <Notification />
       <ScreenOverlay />
       <Router>
         <ScrollToTop />
         <AnimatedRoutes isLoggedIn={isLoggedIn} />
       </Router>
-      
     </div>
   );
-}
+};
 
 export default App;
