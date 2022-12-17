@@ -9,7 +9,7 @@ import Button from "components/Button"
 
 const Hero:React.FC = () => {
 
-    return (
+      return (
         <>
         <div className="relative grid grid-rows-3 grid-cols-3 h-[85vh] bg-sauvignon-cr">
              <div className="grid row-start-1 row-end-4 col-start-1 col-end-4 bg-black w-5/6 h-5/6 m-auto relative z-0 before:absolute before:inset-0 before:bg-black before:opacity-40">
