@@ -1,4 +1,4 @@
-# Dummy E-Shop App
+# Dummy E-Shop App  -- Hosting version doesn't work
 
 ![Mibbyfashions](https://user-images.githubusercontent.com/84051594/204839097-23b2dc51-ff27-4f8c-84c7-5f7858573661.png)
 ![image](https://user-images.githubusercontent.com/84051594/204839362-bb69a674-e034-4a96-b4f3-232c2a20d74d.png)
